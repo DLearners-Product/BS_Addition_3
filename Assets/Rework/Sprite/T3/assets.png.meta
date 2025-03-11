@@ -1,34 +1,37 @@
 fileFormatVersion: 2
-guid: cb54abb5040e6754886a220a26d22801
+guid: 2dc23d1d1c734e04d9dec5e47a485429
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8353526321278167776
-    second: T 3 panel_0
+      213: 8891180011573125036
+    second: assets_0
   - first:
-      213: -8945918734072813090
-    second: T 3 panel_1
+      213: -1687144669380700377
+    second: assets_1
   - first:
-      213: 3410395423058861701
-    second: T 3 panel_2
+      213: -2892819179972619951
+    second: assets_2
   - first:
-      213: -4362664255508099424
-    second: T 3 panel_3
+      213: 4748470198486955293
+    second: assets_3
   - first:
-      213: 1438690424958851381
-    second: T 3 panel_4
+      213: 7488974563240590749
+    second: assets_4
   - first:
-      213: 4830704832789346508
-    second: T 3 panel_5
+      213: 8525114657413556256
+    second: assets_5
   - first:
-      213: 8029531717032901097
-    second: T 3 panel_6
+      213: -7264972599485739828
+    second: assets_6
   - first:
-      213: -6133399615661372576
-    second: T 3 panel_7
+      213: -8918686826913355892
+    second: assets_7
   - first:
-      213: 7793862147703110341
-    second: T 3 panel_8
+      213: 4754003520139017589
+    second: assets_8
+  - first:
+      213: 5936484407812813961
+    second: assets_9
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -126,169 +129,211 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: T 3 panel_0
+      name: assets_0
       rect:
         serializedVersion: 2
-        x: 62
-        y: 1872
-        width: 1924
-        height: 136
+        x: 88
+        y: 728
+        width: 128
+        height: 256
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0ea29a92eefade370800000000000000
-      internalID: 8353526321278167776
+      spriteID: caf9edfec11d36b70800000000000000
+      internalID: 8891180011573125036
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: T 3 panel_1
+      name: assets_1
       rect:
         serializedVersion: 2
-        x: 136
-        y: 760
-        width: 1641
-        height: 1030
+        x: 372
+        y: 736
+        width: 208
+        height: 256
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ed9e3121f46b9d380800000000000000
-      internalID: -8945918734072813090
+      spriteID: 7279ed0bcde0698e0800000000000000
+      internalID: -1687144669380700377
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: T 3 panel_2
+      name: assets_2
       rect:
         serializedVersion: 2
-        x: 136
-        y: 344
-        width: 355
-        height: 285
+        x: 698
+        y: 771
+        width: 208
+        height: 197
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 58e9a077198245f20800000000000000
-      internalID: 3410395423058861701
+      spriteID: 1519b4a5844aad7d0800000000000000
+      internalID: -2892819179972619951
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: T 3 panel_3
+      name: assets_3
       rect:
         serializedVersion: 2
-        x: 544
-        y: 472
-        width: 106
-        height: 106
+        x: 58
+        y: 400
+        width: 223
+        height: 280
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0ae452859f3b473c0800000000000000
-      internalID: -4362664255508099424
+      spriteID: d15f75fac74f5e140800000000000000
+      internalID: 4748470198486955293
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: T 3 panel_4
+      name: assets_4
+      rect:
+        serializedVersion: 2
+        x: 389
+        y: 440
+        width: 171
+        height: 172
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9d34eddfae2ee760800000000000000
+      internalID: 7488974563240590749
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: assets_5
       rect:
         serializedVersion: 2
         x: 688
-        y: 368
-        width: 356
-        height: 281
+        y: 399
+        width: 269
+        height: 244
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5399d69a15147f310800000000000000
-      internalID: 1438690424958851381
+      spriteID: 0286c98ec9a4f4670800000000000000
+      internalID: 8525114657413556256
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: T 3 panel_5
+      name: assets_6
       rect:
         serializedVersion: 2
-        x: 1080
-        y: 440
-        width: 104
-        height: 99
+        x: 154
+        y: 194
+        width: 275
+        height: 172
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cc8fb25837c1a0340800000000000000
-      internalID: 4830704832789346508
+      spriteID: cccc4b889e1ad2b90800000000000000
+      internalID: -7264972599485739828
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: T 3 panel_6
+      name: assets_7
       rect:
         serializedVersion: 2
-        x: 1264
-        y: 397
-        width: 355
-        height: 196
+        x: 629
+        y: 184
+        width: 353
+        height: 172
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9e97a7aed80ae6f60800000000000000
-      internalID: 8029531717032901097
+      spriteID: c87afda85957a3480800000000000000
+      internalID: -8918686826913355892
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: T 3 panel_8
+      name: assets_8
       rect:
         serializedVersion: 2
-        x: 156
-        y: 92
-        width: 284
-        height: 151
+        x: 167
+        y: 11
+        width: 285
+        height: 158
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5caf436645c592c60800000000000000
-      internalID: 7793862147703110341
+      spriteID: 57db7d6830d99f140800000000000000
+      internalID: 4754003520139017589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: assets_9
+      rect:
+        serializedVersion: 2
+        x: 629
+        y: 51
+        width: 353
+        height: 111
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 984f356bd11a26250800000000000000
+      internalID: 5936484407812813961
       vertices: []
       indices: 
       edges: []

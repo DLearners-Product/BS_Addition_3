@@ -88,6 +88,15 @@ public class Utilities : MonoGenericSingleton<Utilities>
         _tween.Play();
     }
 
+    public void ANIM_MoveWithRandomRotate(Transform obj, Vector3 endPosition, float duration = 0.5f, TweenCallback callback = null)
+    {
+        Sequence seq = DOTween.Sequence();
+        seq.Append(obj.DOMove(endPosition, duration));
+        seq.Join(obj.DOShakeRotation(duration));
+        seq.onComplete += callback;
+        seq.Play();
+    }
+
     public void ANIM_MoveLocal(Transform obj, Vector3 endPos, float movementSpeed = 0.5f, TweenCallback callBack = null)
     {
         var _tween = obj.DOLocalMove(endPos, movementSpeed);
@@ -169,9 +178,9 @@ public class Utilities : MonoGenericSingleton<Utilities>
         tween.onComplete += callback;
     }
 
-    public void ANIM_ShrinkOnPosition(Transform obj, Vector3 shrinkObj, float actionTime = 0.5f, TweenCallback callback = null)
+    public void ANIM_ShrinkOnPosition(Transform obj, Vector3 shrinkSize, float actionTime = 0.5f, TweenCallback callback = null)
     {
-        var tween = obj.DOScale(shrinkObj, actionTime);
+        var tween = obj.DOScale(shrinkSize, actionTime);
         tween.onComplete += callback;
     }
 
@@ -256,8 +265,6 @@ public class Utilities : MonoGenericSingleton<Utilities>
         Sequence seq = DOTween.Sequence();
         seq.Append(obj.DORotate(rotationDirection, 0.5f));
         seq.Append(obj.DORotate(-rotationDirection, 0.5f));
-        // seq.Append(obj.DORotate(rotationDirection, 0.5f));
-        // seq.Append(obj.DORotate(-rotationDirection, 0.5f));
         seq.SetLoops(3);
         seq.onComplete += callback;
         seq.Play();
