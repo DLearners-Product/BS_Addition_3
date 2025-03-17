@@ -2078,7 +2078,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 566802030}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1083796337}
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &566802030
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4112,6 +4123,7 @@ MonoBehaviour:
   - {fileID: 2012326343}
   - {fileID: 1742959205}
   - {fileID: 1088874277}
+  validateBTN: {fileID: 566802029}
 --- !u!1 &1088874277
 GameObject:
   m_ObjectHideFlags: 0
@@ -4356,7 +4368,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 4930be56437d0634db6ed9c77a3cbad8, type: 3}
     m_FontSize: 50
     m_FontStyle: 0
     m_BestFit: 0
