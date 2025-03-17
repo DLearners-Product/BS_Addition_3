@@ -178,7 +178,7 @@ public class Utilities : MonoGenericSingleton<Utilities>
         tween.onComplete += callback;
     }
 
-    public void ANIM_ShrinkOnPosition(Transform obj, Vector3 shrinkSize, float actionTime = 0.5f, TweenCallback callback = null)
+    public void ANIM_ScaleOnV3(Transform obj, Vector3 shrinkSize, float actionTime = 0.5f, TweenCallback callback = null)
     {
         var tween = obj.DOScale(shrinkSize, actionTime);
         tween.onComplete += callback;
