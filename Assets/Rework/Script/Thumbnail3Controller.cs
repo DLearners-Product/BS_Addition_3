@@ -24,7 +24,7 @@ public class Thumbnail3Controller : MonoBehaviour
     public Transform answerSpawnPosition;
     public Transform marketShaft;
     public Transform basket1, basket2;
-    public Transform vegetableSpawnPoint1, vegetableSpawnPoint2;
+    public Transform vegetableSpawnPoint1, vegetableSpawnPoint2, vegetableSpawnPoint3;
     public GameObject vegetableSpawnPrefab;
     public Sprite[] vegetableSprites;
     public string[] questionSTR;
@@ -32,7 +32,9 @@ public class Thumbnail3Controller : MonoBehaviour
     public Transform answerContainPanel;
     public GameObject[] countDisplayPanels;
     public Button validateBTN;
+    public Button activity2NextBTN;
     int currentIndex = 0;
+    Vector3 basket1InitialPosition, basket2InitialPosition, answerPanelIntialPosition;
 
     void Start()
     {
@@ -99,9 +101,14 @@ public class Thumbnail3Controller : MonoBehaviour
 
     void ResetActivity2()
     {
+        basket1InitialPosition = basket1.position;
+        basket2InitialPosition = basket2.position;
+        answerPanelIntialPosition = answerContainPanel.position;
+
         Utilities.Instance.ANIM_ShrinkObject(symbol1.transform, 0f);
         Utilities.Instance.ANIM_ShrinkObject(symbol2.transform, 0f);
         Utilities.Instance.ANIM_ShrinkObject(validateBTN.transform, 0f);
+        Utilities.Instance.ANIM_ShrinkObject(nextBTN.transform, 0f);
         for (int i = 0; i < countDisplayPanels.Length; i++)
         {
             Utilities.Instance.ANIM_ShrinkObject(countDisplayPanels[i].transform, 0f);
@@ -112,8 +119,10 @@ public class Thumbnail3Controller : MonoBehaviour
 
     void OpenShopShaft()
     {
-        Utilities.Instance.ANIM_BounceEffect(marketShaft, callback : () => MoveBasket(basket1, position1));
+        Utilities.Instance.ANIM_BounceEffect(marketShaft, callback : SpawnQuestion);
     }
+
+    void SpawnQuestion() => MoveBasket(basket1, position1);
 
     void MoveBasket(Transform basketObj, Transform moveTransform, int dropCount = 0)
     {
@@ -127,26 +136,30 @@ public class Thumbnail3Controller : MonoBehaviour
     {
         int[] questionCount = GetQuestionInt();
 
+        // Debug.Log($"Question Count 1 :: {questionCount[0]}");
+        // Debug.Log($"Question Count 2 :: {questionCount[1]}");
+
         StartCoroutine(SpawnVegetables(vegetableSpawnPoint1, basket1, countDisplayPanels[0].transform, questionCount[0], () => {
             StartCoroutine(SpawnVegetables(vegetableSpawnPoint2, basket2, countDisplayPanels[1].transform, questionCount[1], () => {
                 Utilities.Instance.ANIM_ShowNormal(validateBTN.transform, callback: () => {
                     Utilities.Instance.ANIM_ScaleOnV3(countDisplayPanels[countDisplayPanels.Length - 1].transform, Vector3.one * 1.15f, callback: () => {
                         countDisplayPanels[countDisplayPanels.Length - 1].GetComponentInChildren<TMP_InputField>().ActivateInputField();
                     });
-            });
+                });
             }));
         }));
     }
 
     void UpdateVegetableDisplayCounter(Transform updateObj)
     {
-        Debug.Log("Came here....");
         updateObj.GetComponentInChildren<TextMeshProUGUI>().text = $"{Int16.Parse(updateObj.GetComponentInChildren<TextMeshProUGUI>().text) + 1}";
-        Debug.Log(updateObj.GetComponentInChildren<TextMeshProUGUI>().text);
     }
 
     IEnumerator SpawnVegetables(Transform spawnParent, Transform basketObj, Transform counterObj, int spawnCount, Action func=null)
     {
+        Debug.Log($"SPawn Count :: {spawnCount}");
+        Debug.Log($"Baskete :: {basketObj.name}");
+
         int count = 0;
         while (count < spawnCount)
         {
@@ -168,7 +181,12 @@ public class Thumbnail3Controller : MonoBehaviour
             spawnedVegetable.transform.parent = basketObj;
             spawnedVegetable.transform.SetSiblingIndex(1);
 
-            Utilities.Instance.ANIM_MoveWithRandomRotate(spawnedVegetable.transform, endPosition, callback: () => UpdateVegetableDisplayCounter(counterObj));
+            Utilities.Instance.ANIM_MoveWithRandomRotate(spawnedVegetable.transform, endPosition, callback: 
+                () => {
+                    if(counterObj != null) 
+                        UpdateVegetableDisplayCounter(counterObj);
+                }
+            );
             yield return new WaitForSeconds(0.5f);
             count++;
         }
@@ -185,6 +203,7 @@ public class Thumbnail3Controller : MonoBehaviour
 
     void SpawnAnswerPanel()
     {
+        Debug.Log("Came to SpawnAnswerPanel...");
         Utilities.Instance.ANIM_Move(answerContainPanel, answerSpawnPosition.position, callBack: () => EnableCountDisplayPanel());
     }
 
@@ -213,9 +232,84 @@ public class Thumbnail3Controller : MonoBehaviour
 
     public void OnValidateBTNClick()
     {
-        int answerInt = Int16.Parse(countDisplayPanels[countDisplayPanels.Length - 1].GetComponentInChildren<TextMeshProUGUI>().text);
-        // if()
+
+        if(countDisplayPanels[countDisplayPanels.Length - 1].GetComponentInChildren<TMP_InputField>().text.Equals("")) return;
+
+        int answerInt = Int16.Parse(countDisplayPanels[countDisplayPanels.Length - 1].GetComponentInChildren<TMP_InputField>().text);
+
+        if(answerInt == 0) return;
+
+        StartCoroutine(SpawnVegetables(vegetableSpawnPoint3, answerContainPanel, null, answerInt, EvaluateAnswer));
     }
+
+    void EvaluateAnswer()
+    {
+        int answerInt = Int16.Parse(countDisplayPanels[countDisplayPanels.Length - 1].GetComponentInChildren<TMP_InputField>().text);
+        int q1TextInt = Int16.Parse(countDisplayPanels[0].GetComponentInChildren<TextMeshProUGUI>().text);
+        int q2TextInt = Int16.Parse(countDisplayPanels[1].GetComponentInChildren<TextMeshProUGUI>().text);
+        if(answerInt == (q1TextInt + q2TextInt))
+        {
+            if(currentIndex == questionSTR.Length - 1){
+                EnableNextBTN();
+            }else{
+                Utilities.Instance.ANIM_CorrectScaleEffect(answerContainPanel, callback: MoveUpAndChangeQuestion);
+            }
+        }else{
+            Utilities.Instance.ANIM_WrongShakeEffect(answerContainPanel, callback: () => DestroySpawnedVegetableChildObjs(answerContainPanel));
+        }
+    }
+
+    void MoveUpAndChangeQuestion()
+    {
+        Utilities.Instance.ANIM_Move(basket1, basket1InitialPosition, callBack: () => DestroySpawnedVegetableChildObjs(basket1));
+        Utilities.Instance.ANIM_Move(basket2, basket2InitialPosition, callBack: () => DestroySpawnedVegetableChildObjs(basket2));
+        Utilities.Instance.ANIM_Move(answerContainPanel, answerPanelIntialPosition, callBack: () => {
+            currentIndex++;
+            DestroySpawnedVegetableChildObjs(answerContainPanel);
+            ResetCounters();
+        });
+    }
+
+    void DestroySpawnedVegetableChildObjs(Transform parentObj)
+    {
+        int answeCount = parentObj.childCount;
+        for (int i = 0; i < answeCount; i++)
+        {
+            if(!parentObj.GetChild(i).name.ToLower().Contains("basket"))
+            {
+                Destroy(parentObj.GetChild(i).gameObject);
+            }
+        }
+    }
+
+    void ResetCounters(int index = 0)
+    {
+        if(index == (countDisplayPanels.Length - 1))
+        {
+            Utilities.Instance.ANIM_ShowBounceNormal(countDisplayPanels[index].transform, callback: () => {
+                countDisplayPanels[index].transform.GetComponentInChildren<TMP_InputField>().text = "";
+                SpawnQuestion();
+            });
+        }else{
+            Utilities.Instance.ANIM_ShowBounceNormal(countDisplayPanels[index].transform, callback: () => {
+                countDisplayPanels[index].transform.GetComponentInChildren<TextMeshProUGUI>().text = "0";
+                ResetCounters(++index);
+            });
+        }
+    }
+
+    void EnableNextBTN()
+    {
+        Utilities.Instance.ANIM_ShrinkObject(validateBTN.transform, callback: () => {
+            Utilities.Instance.ANIM_ShowNormal(activity2NextBTN.transform);
+        });
+    }
+
+#endregion
+
+#region ACTIVITY_3
+
+    
 
 #endregion
 }
