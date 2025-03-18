@@ -1,7 +1,88 @@
 fileFormatVersion: 2
 guid: b4e13e8ef171935459dbf9ecdf415805
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: -5622901713081898559
+    second: 27_0
+  - first:
+      213: 6393303234226741781
+    second: 27_1
+  - first:
+      213: 1159544496477699280
+    second: 27_2
+  - first:
+      213: -830633138475329538
+    second: 27_3
+  - first:
+      213: 8502447301717181115
+    second: 27_4
+  - first:
+      213: -7301294688522357973
+    second: 27_5
+  - first:
+      213: 2834575224341873116
+    second: 27_6
+  - first:
+      213: -9096203262175320139
+    second: 27_7
+  - first:
+      213: -4995120230135692889
+    second: 27_8
+  - first:
+      213: 4574259142047435345
+    second: 27_9
+  - first:
+      213: 6132473266324233345
+    second: 27_10
+  - first:
+      213: -6987515733985995561
+    second: 27_11
+  - first:
+      213: 3466715342544813554
+    second: 27_12
+  - first:
+      213: -3406335864397724740
+    second: 27_13
+  - first:
+      213: -877879132267635655
+    second: 27_14
+  - first:
+      213: -2153119659034562312
+    second: 27_15
+  - first:
+      213: -3208731553277479667
+    second: 27_16
+  - first:
+      213: -8008091596841621881
+    second: 27_17
+  - first:
+      213: 3365238983503055359
+    second: 27_18
+  - first:
+      213: 161948202185612793
+    second: 27_19
+  - first:
+      213: 439324648797956396
+    second: 27_20
+  - first:
+      213: 8008444338826435549
+    second: 27_21
+  - first:
+      213: -9090388185429222726
+    second: 27_22
+  - first:
+      213: -5356889051343940761
+    second: 27_23
+  - first:
+      213: 845898007451009746
+    second: 27_24
+  - first:
+      213: 3393117650044682782
+    second: 27_25
+  - first:
+      213: -5829135960902016098
+    second: 27_26
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -40,7 +121,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -97,7 +178,28 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: 27_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 365
+        width: 1024
+        height: 290
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c961d0fea077f1b0800000000000000
+      internalID: -5622901713081898559
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
