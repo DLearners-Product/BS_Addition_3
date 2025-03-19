@@ -1,10 +1,28 @@
 fileFormatVersion: 2
-guid: 7db56fc113ffb8148b417d9a503962dc
+guid: 5ae1dfe386c55de48a98ba3057fe48bd
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6946007662723423348
-    second: 45_0
+      213: 9018777716549327419
+    second: T 3 panel 2 2_0
+  - first:
+      213: -7116029528096900972
+    second: T 3 panel 2 2_1
+  - first:
+      213: 1600267791980440699
+    second: T 3 panel 2 2_2
+  - first:
+      213: 7255858004739179083
+    second: T 3 panel 2 2_0
+  - first:
+      213: -6483893848855894263
+    second: T 3 panel 2 2_1
+  - first:
+      213: 4083506002023892608
+    second: T 3 panel 2 2_2
+  - first:
+      213: 2489134772188099267
+    second: T 3 panel 2 2_3
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -102,13 +120,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: 45_0
+      name: T 3 panel 2 2_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 365
-        width: 1024
-        height: 290
+        x: 108
+        y: 1696
+        width: 724
+        height: 288
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -116,8 +134,71 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c83aa3015d2da9f90800000000000000
-      internalID: -6946007662723423348
+      spriteID: b424721896cf1b460800000000000000
+      internalID: 7255858004739179083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: T 3 panel 2 2_1
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 1472
+        width: 417
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 907aa99c5e49406a0800000000000000
+      internalID: -6483893848855894263
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: T 3 panel 2 2_2
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 1191
+        width: 465
+        height: 215
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0864fc0d2178ba830800000000000000
+      internalID: 4083506002023892608
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: T 3 panel 2 2_3
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 776
+        width: 467
+        height: 244
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c2385623ee2b8220800000000000000
+      internalID: 2489134772188099267
       vertices: []
       indices: 
       edges: []

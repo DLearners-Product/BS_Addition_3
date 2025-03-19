@@ -36,13 +36,24 @@ public class Thumbnail3Controller : MonoBehaviour
     int currentIndex = 0;
     Vector3 basket1InitialPosition, basket2InitialPosition, answerPanelIntialPosition;
 
+    [Header("Activity 3")]
+    public Transform optionsSpawnParent;
+    public Transform[] questionPanels, optionsSpawnPositions;
+    public Transform[] questionSpawnPoints;
+    public Transform[] baskets;
+    public GameObject optionPrefab;
+    public string[] optionTexts;
+    Vector3[] questionInitialPosition;
+
     void Start()
     {
         spawnedQuestionObjects = new List<GameObject>();
         nextBTN.interactable = false;
         // SpawnQuestion();
         ResetActivity2();
-        OpenShopShaft();
+        // OpenShopShaft();
+        ResetActivity3();
+        StartCoroutine(ShowQuestionPanel());
     }
 
 #region ACTIVITY_1
@@ -309,7 +320,41 @@ public class Thumbnail3Controller : MonoBehaviour
 
 #region ACTIVITY_3
 
-    
+    void ResetActivity3()
+    {
+        Debug.Log("Came here");
+        questionInitialPosition = new Vector3[questionSpawnPoints.Length];
+        for (int i = 0; i < questionPanels.Length; i++)
+        {
+            questionInitialPosition[i] = questionPanels[i].position;
+            Utilities.Instance.ANIM_Move(questionPanels[i], questionSpawnPoints[i].position, 0f);
+        }
+    }
+
+    IEnumerator ShowQuestionPanel(int index = 0)
+    {
+        if(index == questionPanels.Length) { StartCoroutine(SpawnOption()); yield break; }
+        Utilities.Instance.ANIM_Move(questionPanels[index], questionInitialPosition[index]);
+
+        yield return new WaitForSeconds(0.25f);
+
+        StartCoroutine(ShowQuestionPanel(++index));
+    }
+
+    IEnumerator SpawnOption(int index = 0)
+    {
+        if(index == optionsSpawnPositions.Length) yield break;
+
+        var spawnedOpt = Instantiate(optionPrefab, optionsSpawnParent);
+        spawnedOpt.transform.position = optionsSpawnPositions[index].position;
+        spawnedOpt.GetComponentInChildren<TextMeshProUGUI>().text = optionTexts[index];
+        spawnedOpt.GetComponent<ImageDragandDrop>().ResetInitialPositoin();
+        Utilities.Instance.ANIM_ShowBounceNormal(spawnedOpt.transform);
+
+        yield return new WaitForSeconds(0.25f);
+
+        StartCoroutine(SpawnOption(++index));
+    }
 
 #endregion
 }
