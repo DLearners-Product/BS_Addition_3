@@ -43,32 +43,44 @@ public class Thumbnail3Controller : MonoBehaviour
     public Transform[] baskets;
     public GameObject optionPrefab;
     public string[] optionTexts;
+    public GameObject activityCompleted;
     Vector3[] questionInitialPosition;
+    int act3AnsweredCount = 0;
 
     void Start()
     {
         spawnedQuestionObjects = new List<GameObject>();
         nextBTN.interactable = false;
-        // SpawnQuestion();
+        SpawnQuestion();
         ResetActivity2();
         // OpenShopShaft();
         ResetActivity3();
-        StartCoroutine(ShowQuestionPanel());
+        // StartCoroutine(ShowQuestionPanel());
+    }
+
+    private void OnEnable() {
+        ImageDragandDrop.onDrag += OnOptionDrag;
+        ImageDragandDrop.onDragEnd += OnOptionDragEnd;
+        ImageDropSlot.onDropInSlot += OnOptionDrop;
+    }
+
+    private void OnDisable() {
+        ImageDragandDrop.onDrag -= OnOptionDrag;
+        ImageDragandDrop.onDragEnd -= OnOptionDragEnd;
+        ImageDropSlot.onDropInSlot -= OnOptionDrop;
     }
 
 #region ACTIVITY_1
 
     void SpawnQuestion(int spawnIndex = 0)
     {
-        Debug.Log($"spawnIndex : {spawnIndex}");
-
         if(spawnIndex == questionTexts.Length) return;
 
         GameObject spawnedQuestion = Instantiate(questionSpawnPrefab, questionSpawnParent);
         spawnedQuestionObjects.Add(spawnedQuestion);
         spawnedQuestion.transform.GetComponentInChildren<TextMeshProUGUI>().text = questionTexts[spawnIndex];
         spawnedQuestion.AddComponent<Button>().onClick.AddListener(OnQuestionPanelClicked);
-        Utilities.Instance.ANIM_Move(spawnedQuestion.transform, questionSpawnPositions[spawnIndex].position, callBack: () => {
+        Utilities.Instance.ANIM_MoveWithScaleUp(spawnedQuestion.transform, questionSpawnPositions[spawnIndex].position, onCompleteCallBack: () => {
             SpawnQuestion(++spawnIndex);
         });
     }
@@ -98,9 +110,9 @@ public class Thumbnail3Controller : MonoBehaviour
 
     void ShrinkQuestion(int index = 1)
     {
-        if(index == spawnedQuestionObjects.Count) return;
+        if(index > spawnedQuestionObjects.Count) { nextBTN.gameObject.SetActive(false); OpenShopShaft(); return; }
 
-        Utilities.Instance.ANIM_Move(spawnedQuestionObjects[spawnedQuestionObjects.Count - index].transform, Vector3.zero, callBack: () => {
+        Utilities.Instance.ANIM_MoveWithScaleDown(spawnedQuestionObjects[spawnedQuestionObjects.Count - index].transform, Vector3.zero, onCompleteCallBack: () => {
             spawnedQuestionObjects[spawnedQuestionObjects.Count - index].SetActive(false);
             ShrinkQuestion(++index);
         });
@@ -119,7 +131,7 @@ public class Thumbnail3Controller : MonoBehaviour
         Utilities.Instance.ANIM_ShrinkObject(symbol1.transform, 0f);
         Utilities.Instance.ANIM_ShrinkObject(symbol2.transform, 0f);
         Utilities.Instance.ANIM_ShrinkObject(validateBTN.transform, 0f);
-        Utilities.Instance.ANIM_ShrinkObject(nextBTN.transform, 0f);
+
         for (int i = 0; i < countDisplayPanels.Length; i++)
         {
             Utilities.Instance.ANIM_ShrinkObject(countDisplayPanels[i].transform, 0f);
@@ -130,10 +142,10 @@ public class Thumbnail3Controller : MonoBehaviour
 
     void OpenShopShaft()
     {
-        Utilities.Instance.ANIM_BounceEffect(marketShaft, callback : SpawnQuestion);
+        Utilities.Instance.ANIM_BounceEffect(marketShaft, callback : SpawnActivity2Question);
     }
 
-    void SpawnQuestion() => MoveBasket(basket1, position1);
+    void SpawnActivity2Question() => MoveBasket(basket1, position1);
 
     void MoveBasket(Transform basketObj, Transform moveTransform, int dropCount = 0)
     {
@@ -168,8 +180,8 @@ public class Thumbnail3Controller : MonoBehaviour
 
     IEnumerator SpawnVegetables(Transform spawnParent, Transform basketObj, Transform counterObj, int spawnCount, Action func=null)
     {
-        Debug.Log($"SPawn Count :: {spawnCount}");
-        Debug.Log($"Baskete :: {basketObj.name}");
+        // Debug.Log($"SPawn Count :: {spawnCount}");
+        // Debug.Log($"Baskete :: {basketObj.name}");
 
         int count = 0;
         while (count < spawnCount)
@@ -227,7 +239,6 @@ public class Thumbnail3Controller : MonoBehaviour
                 StartSpawnVegetablesOnAllBasket();
             }
         }
-
     }
 
     int[] GetQuestionInt()
@@ -299,7 +310,7 @@ public class Thumbnail3Controller : MonoBehaviour
         {
             Utilities.Instance.ANIM_ShowBounceNormal(countDisplayPanels[index].transform, callback: () => {
                 countDisplayPanels[index].transform.GetComponentInChildren<TMP_InputField>().text = "";
-                SpawnQuestion();
+                SpawnActivity2Question();
             });
         }else{
             Utilities.Instance.ANIM_ShowBounceNormal(countDisplayPanels[index].transform, callback: () => {
@@ -322,7 +333,6 @@ public class Thumbnail3Controller : MonoBehaviour
 
     void ResetActivity3()
     {
-        Debug.Log("Came here");
         questionInitialPosition = new Vector3[questionSpawnPoints.Length];
         for (int i = 0; i < questionPanels.Length; i++)
         {
@@ -354,6 +364,68 @@ public class Thumbnail3Controller : MonoBehaviour
         yield return new WaitForSeconds(0.25f);
 
         StartCoroutine(SpawnOption(++index));
+    }
+
+    void OnOptionDrop(GameObject dragedObj, GameObject dropSlotObj)
+    {
+        string dragObjText = dragedObj.transform.GetComponentInChildren<TextMeshProUGUI>().text;
+        string dropSlotText = dropSlotObj.transform.parent.parent.GetChild(0).name;
+
+        if(dragObjText.Equals(dropSlotText))
+        {
+            Destroy(dragedObj);
+
+            act3AnsweredCount++;
+
+            var optObj = dropSlotObj.transform.parent.GetChild(2);
+            optObj.gameObject.SetActive(true);
+            optObj.GetComponentInChildren<TextMeshProUGUI>().text = dragObjText;
+        }
+
+        if(act3AnsweredCount == optionTexts.Length)
+        {
+            Invoke(nameof(EnableActivityCompleted), 0.5f);
+        }
+    }
+
+    void EnableActivityCompleted()
+    {
+        activityCompleted.SetActive(true);
+    }
+
+    void OnOptionDrag(GameObject dragObject)
+    {
+        HighlightNearbyBasket(dragObject.transform);
+    }
+
+    void OnOptionDragEnd(GameObject dropObject) => ResetBasketHiglights();
+
+    void HighlightNearbyBasket(Transform fruitObj)
+    {
+        ResetBasketHiglights();
+        List<float> distances = new List<float>();
+        float _distance = 0f;
+        
+        int minIndex = 0;
+        _distance = Vector3.Distance(fruitObj.position, baskets[minIndex].position);
+
+        for (int i = 1; i < baskets.Length; i++)
+        {
+            if(_distance > Vector3.Distance(fruitObj.position, baskets[i].position))
+            {
+                minIndex = i;
+                _distance = Vector3.Distance(fruitObj.position, baskets[i].position);
+            }
+        }
+        baskets[minIndex].GetChild(0).gameObject.SetActive(true);
+    }
+
+    void ResetBasketHiglights()
+    {
+        for (int i = 0; i < baskets.Length; i++)
+        {
+            baskets[i].transform.GetChild(0).gameObject.SetActive(false);
+        }
     }
 
 #endregion

@@ -51,12 +51,10 @@ public class ImageDragandDrop : MonoBehaviour, IBeginDragHandler,IEndDragHandler
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        Debug.Log($"OnEndDragCalled");
         onDragEnd?.Invoke(eventData.pointerDrag);
 
         canvasGroup.alpha = 1f;
         canvasGroup.blocksRaycasts = true;
-        Debug.Log(gameObject.transform.parent.name, gameObject.transform.parent);
         if(originalParent.Equals(gameObject.transform.parent) && resetPositionOnDrop){
             ReturnToOriginalPos();
         }

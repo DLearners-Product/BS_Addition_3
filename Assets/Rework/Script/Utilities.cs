@@ -107,6 +107,7 @@ public class Utilities : MonoGenericSingleton<Utilities>
     public void ANIM_MoveWithScaleUp(Transform obj, Vector3 endPos, TweenCallback onCompleteCallBack=null)
     {
         Sequence sequence = DOTween.Sequence();
+        sequence.Append(obj.DOScale(Vector3.zero, 0f));
         sequence.Append(obj.DOMove(endPos, 0.5f));
         sequence.Join(obj.DOScale(Vector3.one, 0.5f));
         sequence.onComplete += onCompleteCallBack;
