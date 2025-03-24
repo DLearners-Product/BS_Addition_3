@@ -112,7 +112,7 @@ public class Thumbnail3Controller : MonoBehaviour
     {
         if(index > spawnedQuestionObjects.Count) { nextBTN.gameObject.SetActive(false); OpenShopShaft(); return; }
 
-        Utilities.Instance.ANIM_MoveWithScaleDown(spawnedQuestionObjects[spawnedQuestionObjects.Count - index].transform, Vector3.zero, onCompleteCallBack: () => {
+        Utilities.Instance.ANIM_MoveWithScaleDown(spawnedQuestionObjects[spawnedQuestionObjects.Count - index].transform, Vector3.zero, 0.25f, 0.25f, onCompleteCallBack: () => {
             spawnedQuestionObjects[spawnedQuestionObjects.Count - index].SetActive(false);
             ShrinkQuestion(++index);
         });
@@ -324,6 +324,16 @@ public class Thumbnail3Controller : MonoBehaviour
     {
         Utilities.Instance.ANIM_ShrinkObject(validateBTN.transform, callback: () => {
             Utilities.Instance.ANIM_ShowNormal(activity2NextBTN.transform);
+        });
+    }
+
+    public void OnAct2NextBTNClick()
+    {
+        Utilities.Instance.ANIM_Move(basket1, basket1InitialPosition, callBack: () => DestroySpawnedVegetableChildObjs(basket1));
+        Utilities.Instance.ANIM_Move(basket2, basket2InitialPosition, callBack: () => DestroySpawnedVegetableChildObjs(basket2));
+        Utilities.Instance.ANIM_Move(answerContainPanel, answerPanelIntialPosition, callBack: () => {
+            DestroySpawnedVegetableChildObjs(answerContainPanel);
+            Utilities.Instance.ANIM_ScaleOnV3(marketShaft, new Vector3(1,0,1));
         });
     }
 
