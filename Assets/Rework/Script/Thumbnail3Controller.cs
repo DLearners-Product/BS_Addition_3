@@ -329,11 +329,18 @@ public class Thumbnail3Controller : MonoBehaviour
 
     public void OnAct2NextBTNClick()
     {
+        Utilities.Instance.ANIM_ShrinkObject(symbol1.transform);
+        Utilities.Instance.ANIM_ShrinkObject(symbol2.transform);
+        Utilities.Instance.ANIM_ShrinkObject(activity2NextBTN.transform);
+        Utilities.Instance.ANIM_ShrinkObject(countDisplayPanels[0].transform);
+        Utilities.Instance.ANIM_ShrinkObject(countDisplayPanels[1].transform);
+        Utilities.Instance.ANIM_ShrinkObject(countDisplayPanels[2].transform);
+
         Utilities.Instance.ANIM_Move(basket1, basket1InitialPosition, callBack: () => DestroySpawnedVegetableChildObjs(basket1));
         Utilities.Instance.ANIM_Move(basket2, basket2InitialPosition, callBack: () => DestroySpawnedVegetableChildObjs(basket2));
         Utilities.Instance.ANIM_Move(answerContainPanel, answerPanelIntialPosition, callBack: () => {
             DestroySpawnedVegetableChildObjs(answerContainPanel);
-            Utilities.Instance.ANIM_ScaleOnV3(marketShaft, new Vector3(1,0,1));
+            Utilities.Instance.ANIM_ScaleOnV3(marketShaft, new Vector3(1,0,1), callback : () => StartCoroutine(ShowQuestionPanel()));
         });
     }
 
