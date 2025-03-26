@@ -12,7 +12,7 @@ public class ImageDropSlot: MonoBehaviour, IDropHandler
 
     public void OnDrop(PointerEventData eventData)
     {
-        Debug.Log("OnDropCalled...."+eventData.pointerDrag);
+        // Debug.Log("OnDropCalled...."+eventData.pointerDrag);
         dragitem = eventData.pointerDrag.GetComponent<ImageDragandDrop>();
         onDropInSlot?.Invoke(eventData.pointerDrag, gameObject);
     }
