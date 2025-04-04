@@ -7718,7 +7718,7 @@ GameObject:
   - component: {fileID: 2254800568625572455}
   - component: {fileID: 2254800568625572454}
   m_Layer: 5
-  m_Name: 2recap 1
+  m_Name: 2recap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7761,6 +7761,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 140b32dbf492c93469bb50abee57d996, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sucessSFX: {fileID: 8300000, guid: e67eb3a8b17b3e042b61705539a494f9, type: 3}
+  wrongSFx: {fileID: 8300000, guid: a27d0ce42ffa8b740ae1b39a5f043dd5, type: 3}
+  activity1InstructionVO: {fileID: 8300000, guid: 262d93a82dc19fe43aaf3768709093e3,
+    type: 3}
   questionTexts:
   - 3+7
   - 5+5
@@ -7774,6 +7778,19 @@ MonoBehaviour:
   - 6+4
   - 9+1
   - 7+5
+  questionsClip:
+  - {fileID: 8300000, guid: 1ad1b2443006e584d9d4421322414365, type: 3}
+  - {fileID: 8300000, guid: 4c9da858e4a43ff42a00efebc545ef1e, type: 3}
+  - {fileID: 8300000, guid: 9fa6ce61e05bf9c4fb90daa2d93a31c4, type: 3}
+  - {fileID: 8300000, guid: bfc4e77afb656a44da2133b688e18e09, type: 3}
+  - {fileID: 8300000, guid: fda8ae0c9ed86754686f511d7f0b7925, type: 3}
+  - {fileID: 8300000, guid: 84bf2d02f6a92a747a5759a43f7d5fd8, type: 3}
+  - {fileID: 8300000, guid: 0ac5cf209919c7f45855cfd7085ce50d, type: 3}
+  - {fileID: 8300000, guid: 56a2a68ed6074914d8baabc92f197dc5, type: 3}
+  - {fileID: 8300000, guid: 8274ee35acfb3574a87a67c69655bf83, type: 3}
+  - {fileID: 8300000, guid: 963d0f0455e859547921eaa33bedfe77, type: 3}
+  - {fileID: 8300000, guid: c762b70c3bdd5284d9dba2b6fb4cb24b, type: 3}
+  - {fileID: 8300000, guid: 4b3919186c3c5064899e20684de7009f, type: 3}
   questionSpawnPositions:
   - {fileID: 2254800568153789958}
   - {fileID: 2254800569488864596}
@@ -7792,6 +7809,8 @@ MonoBehaviour:
   questionSpawnParent: {fileID: 2254800568662790518}
   nextBTN: {fileID: 2254800567943497297}
   totalAnswerCount: 7
+  activity2InstructionVO: {fileID: 8300000, guid: b51c6516d1edeed4ca9c290dc1760edc,
+    type: 3}
   position1: {fileID: 2254800569718323747}
   position2: {fileID: 2254800569385924199}
   answerSpawnPosition: {fileID: 2254800569311880649}
@@ -7824,6 +7843,8 @@ MonoBehaviour:
   - {fileID: 2254800568624686640}
   validateBTN: {fileID: 2254800569176127352}
   activity2NextBTN: {fileID: 2254800568003502646}
+  activity3InstructionVO: {fileID: 8300000, guid: 878498e7334a07441955cb4e9f5d1a8e,
+    type: 3}
   optionsSpawnParent: {fileID: 2254800569814945962}
   questionPanels:
   - {fileID: 2254800568116996511}

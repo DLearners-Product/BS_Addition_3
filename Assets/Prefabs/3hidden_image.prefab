@@ -286,6 +286,8 @@ MonoBehaviour:
   - {fileID: -6474974769214175607, guid: 83232ba8477a9624a9edc92a7986fc53, type: 3}
   counterPanel: {fileID: 5974346225667788109}
   activityCompleted: {fileID: 4879427732938939947}
+  rightSFX: {fileID: 8300000, guid: e67eb3a8b17b3e042b61705539a494f9, type: 3}
+  wrongSFX: {fileID: 8300000, guid: a27d0ce42ffa8b740ae1b39a5f043dd5, type: 3}
 --- !u!1 &5974346225247570959
 GameObject:
   m_ObjectHideFlags: 0

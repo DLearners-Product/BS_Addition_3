@@ -14,6 +14,7 @@ public class Thumbnail5Controller : MonoBehaviour
     public Transform questionStartPos, questionEndPos;
     public Transform counterPanel;
     public GameObject blockPanel;
+    public AudioClip rightSFX, wrongSFX;
     public GameObject activityCompleted;
     int currentIndex = 0;
 
@@ -35,10 +36,7 @@ public class Thumbnail5Controller : MonoBehaviour
     void DisableActivityCompleted() => activityCompleted.SetActive(false);
     void EnableActivityCompleted() => activityCompleted.SetActive(true);
 
-    void UpdateCounter()
-    {
-        counterPanel.GetComponentInChildren<TextMeshProUGUI>().text = $"{currentIndex + 1}/{questionOptions.Count}";
-    }
+    void UpdateCounter() => counterPanel.GetComponentInChildren<TextMeshProUGUI>().text = $"{currentIndex + 1}/{questionOptions.Count}";
 
     void SwitchNextQuestion()
     {
@@ -53,7 +51,7 @@ public class Thumbnail5Controller : MonoBehaviour
         ResetRightAnswer();
         UpdateCounter();
         DisableBlockPanel();
-        Utilities.Instance.ANIM_Move(qoDisplayPanel, new Vector3(0,qoDisplayPanel.position.y,0));
+        Utilities.Instance.ANIM_Move(qoDisplayPanel, new Vector3(0,qoDisplayPanel.position.y,0), callBack: PlayCurrentQuestionVO);
     }
 
     void ResetRightAnswer()
@@ -84,12 +82,18 @@ public class Thumbnail5Controller : MonoBehaviour
         {
             EnableBLockPanel();
             selectedOpt.transform.GetChild(0).gameObject.SetActive(true);
+            AudioManager.PlayAudio(rightSFX);
             Utilities.Instance.ANIM_CorrectScaleEffect(selectedOpt.transform, callback: ChangePanel);
         }else{
+            AudioManager.PlayAudio(wrongSFX);
             Utilities.Instance.ANIM_WrongShakeEffect(selectedOpt.transform);
         }
     }
-    
+
+    public void OnSpeakerBTNClicked() => PlayCurrentQuestionVO();
+
+    void PlayCurrentQuestionVO() => AudioManager.PlayAudio(questionOptions[currentIndex].questionCLip);
+
 #endregion
 
 }
@@ -98,6 +102,7 @@ public class Thumbnail5Controller : MonoBehaviour
 public class QuestionOptions
 {
     public string question;
+    public AudioClip questionCLip;
     public List<int> rightOptionsIndex;
     public List<string> options;
 

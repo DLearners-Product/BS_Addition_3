@@ -12,13 +12,16 @@ public class Thumbnail4Controller : MonoBehaviour
     public Sprite[] optionPuzzleSprites;
     public Transform counterPanel;
     public GameObject activityCompleted;
+    public AudioClip rightSFX, wrongSFX;
     List<string> _questionSTRs;
+    List<AudioClip> _questionAudioClip;
     List<GameObject> _optionObjs;
     int totalyAnswered = 0;
 
     void Start()
     {
         _questionSTRs = new List<string>(questionTexts);
+        // _questionAudioClip = new List<AudioClip>(questionClips);
         _optionObjs = new List<GameObject>(optionPuzzleObjs);
         SpawnQuestionsOptions();
         LowerCounterPanel();
@@ -57,6 +60,7 @@ public class Thumbnail4Controller : MonoBehaviour
 
         if(answerMatch)
         {
+            AudioManager.PlayAudio(rightSFX);
             totalyAnswered++;
             UpdateCounter();
             Destroy(dropObj.GetComponentInChildren<TextMeshProUGUI>());
@@ -64,6 +68,8 @@ public class Thumbnail4Controller : MonoBehaviour
             Destroy(dragObj);
 
             if(totalyAnswered == questionTexts.Length) EnableActivityCompleted();
+        }else{
+            AudioManager.PlayAudio(wrongSFX);
         }
     }
 

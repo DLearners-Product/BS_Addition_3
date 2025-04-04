@@ -8,8 +8,12 @@ using UnityEngine.UI;
 
 public class Thumbnail3Controller : MonoBehaviour
 {
+    public AudioClip sucessSFX, wrongSFx;
+
     [Header("Activity 1")]
+    public AudioClip activity1InstructionVO;
     public string[] questionTexts;
+    public AudioClip[] questionsClip;
     public Transform[] questionSpawnPositions;
     public GameObject questionSpawnPrefab;
     public Transform questionSpawnParent;
@@ -19,6 +23,7 @@ public class Thumbnail3Controller : MonoBehaviour
     List<GameObject> spawnedQuestionObjects;
 
     [Header("Activity 2")]
+    public AudioClip activity2InstructionVO;
     public Transform position1;
     public Transform position2;
     public Transform answerSpawnPosition;
@@ -37,6 +42,7 @@ public class Thumbnail3Controller : MonoBehaviour
     Vector3 basket1InitialPosition, basket2InitialPosition, answerPanelIntialPosition;
 
     [Header("Activity 3")]
+    public AudioClip activity3InstructionVO;
     public Transform optionsSpawnParent;
     public Transform[] questionPanels, optionsSpawnPositions;
     public Transform[] questionSpawnPoints;
@@ -74,10 +80,13 @@ public class Thumbnail3Controller : MonoBehaviour
 
     void SpawnQuestion(int spawnIndex = 0)
     {
-        if(spawnIndex == questionTexts.Length) return;
+        if(spawnIndex == questionTexts.Length) { AudioManager.PlayAudio(activity1InstructionVO); return;}
 
         GameObject spawnedQuestion = Instantiate(questionSpawnPrefab, questionSpawnParent);
         spawnedQuestionObjects.Add(spawnedQuestion);
+
+        spawnedQuestion.AddComponent<HoverAudio>().clip = questionsClip[spawnIndex];
+
         spawnedQuestion.transform.GetComponentInChildren<TextMeshProUGUI>().text = questionTexts[spawnIndex];
         spawnedQuestion.AddComponent<Button>().onClick.AddListener(OnQuestionPanelClicked);
         Utilities.Instance.ANIM_MoveWithScaleUp(spawnedQuestion.transform, questionSpawnPositions[spawnIndex].position, onCompleteCallBack: () => {
@@ -98,9 +107,12 @@ public class Thumbnail3Controller : MonoBehaviour
                 totalAnsweredCount++;
                 if(totalAnsweredCount == totalAnswerCount) nextBTN.interactable = true;
             });
+            AudioManager.PlayAudio(sucessSFX);
         }
-        else
+        else{
+            AudioManager.PlayAudio(wrongSFx);
             Utilities.Instance.ANIM_WrongShakeEffect(selectedObj.transform);
+        }
     }
 
     public void OnNextBtnClick()
@@ -167,6 +179,8 @@ public class Thumbnail3Controller : MonoBehaviour
                 Utilities.Instance.ANIM_ShowNormal(validateBTN.transform, callback: () => {
                     Utilities.Instance.ANIM_ScaleOnV3(countDisplayPanels[countDisplayPanels.Length - 1].transform, Vector3.one * 1.15f, callback: () => {
                         countDisplayPanels[countDisplayPanels.Length - 1].GetComponentInChildren<TMP_InputField>().ActivateInputField();
+                        if(currentIndex == 0)
+                            AudioManager.PlayAudio(activity2InstructionVO);
                     });
                 });
             }));
@@ -271,12 +285,16 @@ public class Thumbnail3Controller : MonoBehaviour
         int q2TextInt = Int16.Parse(countDisplayPanels[1].GetComponentInChildren<TextMeshProUGUI>().text);
         if(answerInt == (q1TextInt + q2TextInt))
         {
+            AudioManager.PlayAudio(sucessSFX);
+
             if(currentIndex == questionSTR.Length - 1){
                 EnableNextBTN();
             }else{
                 Utilities.Instance.ANIM_CorrectScaleEffect(answerContainPanel, callback: MoveUpAndChangeQuestion);
             }
         }else{
+            AudioManager.PlayAudio(wrongSFx);
+
             Utilities.Instance.ANIM_WrongShakeEffect(answerContainPanel, callback: () => DestroySpawnedVegetableChildObjs(answerContainPanel));
         }
     }
@@ -370,7 +388,7 @@ public class Thumbnail3Controller : MonoBehaviour
 
     IEnumerator SpawnOption(int index = 0)
     {
-        if(index == optionsSpawnPositions.Length) yield break;
+        if(index == optionsSpawnPositions.Length) { AudioManager.PlayAudio(activity3InstructionVO); yield break;}
 
         var spawnedOpt = Instantiate(optionPrefab, optionsSpawnParent);
         spawnedOpt.transform.position = optionsSpawnPositions[index].position;
@@ -390,6 +408,7 @@ public class Thumbnail3Controller : MonoBehaviour
 
         if(dragObjText.Equals(dropSlotText))
         {
+            AudioManager.PlayAudio(sucessSFX);
             Destroy(dragedObj);
 
             act3AnsweredCount++;
@@ -397,6 +416,8 @@ public class Thumbnail3Controller : MonoBehaviour
             var optObj = dropSlotObj.transform.parent.GetChild(2);
             optObj.gameObject.SetActive(true);
             optObj.GetComponentInChildren<TextMeshProUGUI>().text = dragObjText;
+        }else{
+            AudioManager.PlayAudio(wrongSFx);
         }
 
         if(act3AnsweredCount == optionTexts.Length)
