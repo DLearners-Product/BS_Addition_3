@@ -458,49 +458,73 @@ MonoBehaviour:
   questions:
   - mainQues: 'Lal gets 40 chocolates and 32 cupcakes to celebrate his birthday.
       Find the total? '
+    questionClip: {fileID: 8300000, guid: b72f4849669518e4ba88f9c19b833c21, type: 3}
     ques1: No. of chocolates
     ques2: No. of cupcakes
     ques3: Total
+    ques1Clip: {fileID: 8300000, guid: 896309c2fa9b7c349824def3b56e03ec, type: 3}
+    ques2Clip: {fileID: 8300000, guid: bd0a5afc4b07f154a95abdcf52464ab9, type: 3}
+    ques3Clip: {fileID: 8300000, guid: 544555a4c6590ed4c8c7782b9a4960ee, type: 3}
     ans1: 40
     ans2: 32
     ans3: 72
   - mainQues: There are 62 rose plants in a rose garden. The gardener planted 29
       more rose plants today. How many rose plants are in the garden totally?
+    questionClip: {fileID: 8300000, guid: f09b6bba0995b8542b344b810527329b, type: 3}
     ques1: No. of rose plants
     ques2: No. of roses gardener planted
     ques3: Total no. of rose plants
+    ques1Clip: {fileID: 8300000, guid: 560e6f39460e00a4bb9d927ab8480e6c, type: 3}
+    ques2Clip: {fileID: 8300000, guid: 7276cebf6f702564ea37349e1c73c3b4, type: 3}
+    ques3Clip: {fileID: 8300000, guid: f0f7d49f1660c1d45b6c638ebb82e108, type: 3}
     ans1: 62
     ans2: 29
     ans3: 91
   - mainQues: A book has 28 pages in 'Part 1' and 31 pages in 'Part 2'. How many
       pages does this book have altogether?
+    questionClip: {fileID: 8300000, guid: b0c550db8b94d1a4e82d02c9d61795a9, type: 3}
     ques1: Pages in Part 1
     ques2: Pages in Part 2
     ques3: Total no. of pages
+    ques1Clip: {fileID: 8300000, guid: 7a70f29044356a04fa94ad3f7b0640a1, type: 3}
+    ques2Clip: {fileID: 8300000, guid: 909c95486c5fc654ba9bbf06a50b1679, type: 3}
+    ques3Clip: {fileID: 8300000, guid: 67fee167ed9e41142818cce4ecc8008f, type: 3}
     ans1: 28
     ans2: 31
     ans3: 59
   - mainQues: There are 23 fishes kept in the red basket and 31 fishes in the blue
       basket. Altogether, how many fisher are there in both baskets?
+    questionClip: {fileID: 8300000, guid: b476897d69f108943b939abd442c1740, type: 3}
     ques1: Fishes in red basket
     ques2: Fishes in blue basket
-    ques3: Total no. of basket
+    ques3: Total no. of Fishers
+    ques1Clip: {fileID: 8300000, guid: 00f29474b808a3d44ab0e0012f5a3ffb, type: 3}
+    ques2Clip: {fileID: 8300000, guid: 2d07c58b3779c7a42a634af5567dbfec, type: 3}
+    ques3Clip: {fileID: 8300000, guid: 0cc5099adf4ca9647a4152f97639b0cc, type: 3}
     ans1: 23
     ans2: 31
     ans3: 54
   - mainQues: Harsha has 53 stamps and Rohan has 46 stamps. Find the total number
       of stamps.
+    questionClip: {fileID: 8300000, guid: 54b8b94f223dad340b8d6c926841bf1c, type: 3}
     ques1: No. of stamps harsha has
     ques2: No. of stamps Rohan has
     ques3: Total no. of stamps
+    ques1Clip: {fileID: 8300000, guid: b8f99d1b6d8befb4b8c78d63f3aac256, type: 3}
+    ques2Clip: {fileID: 8300000, guid: 184f293bc51a2e846811624e1976c668, type: 3}
+    ques3Clip: {fileID: 8300000, guid: 11a5d7c640b4330449f89925e298ad2b, type: 3}
     ans1: 53
     ans2: 46
     ans3: 99
   - mainQues: A farmer has 48 goats and 22 cows. How many farm animals does he have
       in all?
+    questionClip: {fileID: 8300000, guid: b4a444d62ff4eba4a9befbeb6719db88, type: 3}
     ques1: No. of goats
     ques2: No. of cows
     ques3: Total no. of farm animals
+    ques1Clip: {fileID: 8300000, guid: a46af2aa36d7a0649994e1327c596807, type: 3}
+    ques2Clip: {fileID: 8300000, guid: 7efb576bfba5dc0468fe199a509513a2, type: 3}
+    ques3Clip: {fileID: 8300000, guid: 3c1c84843df0727409492dca2a292797, type: 3}
     ans1: 48
     ans2: 22
     ans3: 70
@@ -511,6 +535,7 @@ MonoBehaviour:
   answerSlot1: {fileID: 89727576330311943}
   answerSlot2: {fileID: 89727574861834127}
   answerSlot3: {fileID: 89727575718693068}
+  boardObj: {fileID: 1214173821303398901}
   counterObj: {fileID: 89727574919304269}
   activityCompleted: {fileID: 1180179873881695349}
 --- !u!1 &89727574919304269
@@ -886,8 +911,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278650650
-  m_fontColor: {r: 0.103773594, g: 0.027901389, b: 0.027901389, a: 1}
+    rgba: 4294506744
+  m_fontColor: {r: 0.9716981, g: 0.9716981, b: 0.9716981, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1191,10 +1216,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 89727575841494252}
-  - {fileID: 89727575846518697}
-  - {fileID: 89727576158492767}
-  - {fileID: 89727575947488882}
+  - {fileID: 1214173821303398901}
   m_Father: {fileID: 89727574876143677}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1775,17 +1797,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 89727575841494255}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 89727575382412274}
+  m_Father: {fileID: 1214173821303398901}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -188.9, y: 212.4}
-  m_SizeDelta: {x: 1382.0427, y: 274.35822}
+  m_AnchoredPosition: {x: -6.899994, y: 202.5}
+  m_SizeDelta: {x: 1286.1094, y: 274.35822}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &89727575841494250
 CanvasRenderer:
@@ -1824,8 +1846,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190080
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+    rgba: 4294506744
+  m_fontColor: {r: 0.9716981, g: 0.9716981, b: 0.9716981, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1849,7 +1871,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -1909,18 +1931,18 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 89727575846518696}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 89727576080585647}
   - {fileID: 89727575024985321}
-  m_Father: {fileID: 89727575382412274}
+  m_Father: {fileID: 1214173821303398901}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -496.2, y: 21.7}
+  m_AnchoredPosition: {x: -265, y: 12}
   m_SizeDelta: {x: 767.45825, y: 106.97598}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &89727575846518615
@@ -1960,8 +1982,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190080
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -2045,18 +2067,18 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 89727575947488885}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 89727576340331057}
   - {fileID: 89727576459196120}
-  m_Father: {fileID: 89727575382412274}
+  m_Father: {fileID: 1214173821303398901}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -496, y: -265}
+  m_AnchoredPosition: {x: -265, y: -274.9}
   m_SizeDelta: {x: 767.4583, y: 106.97598}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &89727575947488880
@@ -2096,8 +2118,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190080
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -2555,8 +2577,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278650650
-  m_fontColor: {r: 0.103773594, g: 0.027901389, b: 0.027901389, a: 1}
+    rgba: 4294506744
+  m_fontColor: {r: 0.9716981, g: 0.9716981, b: 0.9716981, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -2640,18 +2662,18 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 89727576158492766}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 89727575076269813}
   - {fileID: 89727576464456566}
-  m_Father: {fileID: 89727575382412274}
+  m_Father: {fileID: 1214173821303398901}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -496, y: -120}
+  m_AnchoredPosition: {x: -265, y: -129.9}
   m_SizeDelta: {x: 767.4583, y: 106.97598}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &89727576158492765
@@ -2691,8 +2713,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190080
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -3335,8 +3357,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278650650
-  m_fontColor: {r: 0.103773594, g: 0.027901389, b: 0.027901389, a: 1}
+    rgba: 4294506744
+  m_fontColor: {r: 0.9716981, g: 0.9716981, b: 0.9716981, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -4623,6 +4645,85 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!1 &4748424058394232596
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1214173821303398901}
+  - component: {fileID: 4395646111468794122}
+  - component: {fileID: 3786503036096909982}
+  m_Layer: 5
+  m_Name: Board
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1214173821303398901
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4748424058394232596}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 89727575841494252}
+  - {fileID: 89727575846518697}
+  - {fileID: 89727576158492767}
+  - {fileID: 89727575947488882}
+  m_Father: {fileID: 89727575382412274}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -182, y: 9.9}
+  m_SizeDelta: {x: 1505.5137, y: 791.9354}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &4395646111468794122
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4748424058394232596}
+  m_CullTransparentMesh: 0
+--- !u!114 &3786503036096909982
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4748424058394232596}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: -3144971951440299818, guid: b31aa67ff37145d49860d20527d7136d,
+    type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
 --- !u!1001 &89727575153068350
 PrefabInstance:
   m_ObjectHideFlags: 0

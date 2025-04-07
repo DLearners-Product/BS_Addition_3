@@ -9,15 +9,19 @@ public class Thumbnail9Controller : MonoBehaviour
     public List<T8Questions> questions;
     public TextMeshProUGUI mainQuestion, ques1, ques2, ques3;
     public TextMeshProUGUI answerSlot1, answerSlot2, answerSlot3;
+    public Transform boardObj;
     public GameObject counterObj;
     public GameObject activityCompleted;
     int currentIndex = 0;
+    Vector3 currentBoardPosition;
 
     void Start()
     {
         ShowQuestion();
+        PlayQuestionsAudio();
         UpdateCounter();
         ShowCounter();
+        currentBoardPosition = boardObj.position;
     }
 
     private void OnEnable() {
@@ -57,8 +61,48 @@ public class Thumbnail9Controller : MonoBehaviour
 
         if(ans1IsRight && ans2IsRight && ans3IsRight)
         {
-            Invoke(nameof(ChangeQuestion), 1.5f);
+            Invoke(nameof(MoveBoardLeft), 1.5f);
         }else ResetAnswers();
+    }
+
+    IEnumerator PlayAuido(Transform questionObj, AudioClip questionClip, Action callback = null)
+    {
+        Utilities.Instance.ANIM_ScaleEffect(questionObj, Vector3.one * 1.15f);
+        var audioManager = AudioManager.PlayAudio(questionClip);
+        yield return new WaitForSeconds(questionClip.length);
+        callback?.Invoke();
+        Utilities.Instance.ANIM_ScaleEffect(questionObj, Vector3.one);
+    }
+
+    void MoveBoardLeft()
+    {
+        Utilities.Instance.ANIM_Move(boardObj, currentBoardPosition + (Vector3.left * 20), callBack: () =>
+        {
+            ChangeQuestion();
+            Utilities.Instance.ANIM_Move(boardObj, currentBoardPosition, callBack:PlayQuestionsAudio);
+        });
+    }
+
+    private void PlayQuestionsAudio()
+    {
+        StartCoroutine(PlayAuido(
+                        mainQuestion.transform,
+                        questions[currentIndex].questionClip,
+                        callback: () =>
+                        StartCoroutine(PlayAuido(
+                            ques1.transform,
+                            questions[currentIndex].ques1Clip,
+                            () => StartCoroutine(PlayAuido(
+                                ques2.transform,
+                                questions[currentIndex].ques2Clip,
+                                () => StartCoroutine(PlayAuido(
+                                    ques3.transform,
+                                    questions[currentIndex].ques3Clip
+                                ))
+                            ))
+                        ))
+                    )
+                );
     }
 
     void ResetAnswers()
@@ -86,6 +130,8 @@ public class Thumbnail9Controller : MonoBehaviour
 public class T8Questions
 {
     public string mainQues;
+    public AudioClip questionClip;
     public string ques1, ques2, ques3;
+    public AudioClip ques1Clip, ques2Clip, ques3Clip;
     public string ans1, ans2, ans3;
 }

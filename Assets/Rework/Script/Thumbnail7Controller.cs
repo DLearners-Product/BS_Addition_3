@@ -9,10 +9,13 @@ public class Thumbnail7Controller : MonoBehaviour
     public TextMeshProUGUI upperTens, upperOnes, lowerTens, lowerOnes, tensPower;
     public Transform counterObj;
     public string[] _quesitons;
+    public AudioClip[] questionClips;
     public GameObject[] answerObjs;
+    public AudioClip[] answerClips;
     public Transform boardObj;
     public Transform startPoint, endPoint;
     public GameObject activityCompleted;
+    public AudioClip wrongSFX;
     int currentIndex = 0;
     Vector3 boardCurrentPosition;
     string[] currentQuesSplit;
@@ -44,6 +47,8 @@ public class Thumbnail7Controller : MonoBehaviour
         tensPower.text = "";
         answerObjs[0].GetComponentInChildren<TextMeshProUGUI>().text = "";
         answerObjs[1].GetComponentInChildren<TextMeshProUGUI>().text = "";
+        if(questionClips[currentIndex] != null)
+            AudioManager.PlayAudio(questionClips[currentIndex]);
         return true;
     }
 
@@ -70,8 +75,11 @@ public class Thumbnail7Controller : MonoBehaviour
 
         if(rightAnswer)
         {
-            Invoke(nameof(MoveBoardLeft), 1f);
+            if(answerClips[currentIndex] != null)
+                AudioManager.PlayAudio(answerClips[currentIndex]);
+            Invoke(nameof(MoveBoardLeft), (answerClips[currentIndex] != null) ? answerClips[currentIndex].length : 1f);
         }else{
+            AudioManager.PlayAudio(wrongSFX);
             Utilities.Instance.ANIM_WrongShakeEffect(answerObjs[0].transform, callback: () => {
                 answerObjs[0].GetComponentInChildren<TextMeshProUGUI>().text = "";
             });

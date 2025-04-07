@@ -4281,13 +4281,28 @@ MonoBehaviour:
   - 28 + 39
   - 57 + 27
   - 48 + 35
+  questionClips:
+  - {fileID: 8300000, guid: f709d908c2c4a3148984e340b831e36e, type: 3}
+  - {fileID: 0}
+  - {fileID: 8300000, guid: 50576f6a2d1e2f447becd7da151428a4, type: 3}
+  - {fileID: 8300000, guid: e589de6598936e744a2cc887e279f56c, type: 3}
+  - {fileID: 8300000, guid: 8b3e893e2fe0ab54bac9cb2a5b6cff06, type: 3}
+  - {fileID: 8300000, guid: 3393c24298b30a84e9aa1e2b794b5f43, type: 3}
   answerObjs:
   - {fileID: 3503838447990205270}
   - {fileID: 3503838449034954425}
+  answerClips:
+  - {fileID: 8300000, guid: ea2af24b2e2ce7742a0f7e577bab2efd, type: 3}
+  - {fileID: 0}
+  - {fileID: 8300000, guid: 3b85b7ff2dd3e7b43963e3fee5ce9b55, type: 3}
+  - {fileID: 8300000, guid: 63df166869226ce498a1eaf40849eae6, type: 3}
+  - {fileID: 8300000, guid: 0a77ba771eb52d548b9d73181e4d88fb, type: 3}
+  - {fileID: 8300000, guid: 6cf914161fdcf6f458c7fce6be37dc56, type: 3}
   boardObj: {fileID: 3503838447899291904}
   startPoint: {fileID: 3503838447558150299}
   endPoint: {fileID: 3503838448187442380}
   activityCompleted: {fileID: 2449451424205421414}
+  wrongSFX: {fileID: 8300000, guid: a27d0ce42ffa8b740ae1b39a5f043dd5, type: 3}
 --- !u!1 &3503838449491471089
 GameObject:
   m_ObjectHideFlags: 0

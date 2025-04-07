@@ -16,6 +16,8 @@ public class Thumbnail8Controller : MonoBehaviour
     public GameObject[] colorObjs;
     public Image selectedColorDisplay;
     public GameObject counterObj;
+    public AudioClip slideAudio;
+    public TextMeshProUGUI selectedAnswer;
     public GameObject activityCompleted;
     string _currentSelectedColorSTR;
     GameObject _currentColorObj;
@@ -23,7 +25,8 @@ public class Thumbnail8Controller : MonoBehaviour
 
     void Start()
     {
-        SetCurrentSelectedColor(cursorSprite[0]);
+        AudioManager.PlayAudio(slideAudio);
+        SetCurrentSelectedColor("", Color.white, Color.white);
         SetCursorSprite(customCursor[0]);
         UpdateCounter();
         _currentColorObj = colorObjs[colorObjs.Length - 1];
@@ -39,24 +42,27 @@ public class Thumbnail8Controller : MonoBehaviour
         _currentColorObj = _selectedObj;
         string selectedColor = _selectedObj.transform.GetChild(0).name;
         _currentSelectedColorSTR = selectedColor;
+        Color selectedColorCode = _selectedObj.transform.GetChild(0).GetComponent<Image>().color;
         Debug.Log($"_currentSelectedColorSTR :: {_currentSelectedColorSTR}");
+        Debug.Log(_selectedObj.name, _selectedObj);
+        Debug.Log(selectedColorCode);
 
         switch (selectedColor)
         {
             case "Red":
-                SetCurrentSelectedColor(cursorSprite[1]);
+                SetCurrentSelectedColor("10", Color.white, selectedColorCode);
                 SetCursorSprite(customCursor[1]);
                 break;
             case "Yellow":
-                SetCurrentSelectedColor(cursorSprite[2]);
+                SetCurrentSelectedColor("5", Color.black, selectedColorCode);
                 SetCursorSprite(customCursor[2]);
                 break;
             case "Green":
-                SetCurrentSelectedColor(cursorSprite[3]);
+                SetCurrentSelectedColor("20", Color.white, selectedColorCode);
                 SetCursorSprite(customCursor[3]);
                 break;
             case "NoColor":
-                SetCurrentSelectedColor(cursorSprite[0]);
+                SetCurrentSelectedColor("", Color.white, selectedColorCode);
                 SetCursorSprite(customCursor[0]);
                 break;
         }
@@ -94,15 +100,14 @@ public class Thumbnail8Controller : MonoBehaviour
         if(totalyAnsweredCount == matchingObjs.Length) Invoke(nameof(EnableActivityCompleted), 1.5f);
     }
 
-    void SetCursorSprite(Texture2D cursorSprite) {
-        Vector2 _cursorWidthHeight;
-        _cursorWidthHeight = new Vector2(1, 1);
-        Cursor.SetCursor(cursorSprite, _cursorWidthHeight, CursorMode.Auto);
-    }
-
+    void SetCursorSprite(Texture2D cursorSprite) => Cursor.SetCursor(cursorSprite, Vector2.one, CursorMode.Auto);
     void EnableActivityCompleted() => activityCompleted.SetActive(true);
     void UpdateCounter() => counterObj.GetComponentInChildren<TextMeshProUGUI>().text = $"{totalyAnsweredCount}/{matchingObjs.Length}";
-    void SetCurrentSelectedColor(Sprite colorSprite) => selectedColorDisplay.sprite = colorSprite;
+    void SetCurrentSelectedColor(string displayText, Color fontColor, Color displayColor) {
+        selectedAnswer.text = displayText;
+        selectedAnswer.color = fontColor;
+        selectedColorDisplay.color = displayColor;
+    }
     void EnableSelectedColor(GameObject _selectedColorObj) => _selectedColorObj.GetComponent<Image>().enabled = true;
     void DisablePrevSelectedColor() => _currentColorObj.GetComponent<Image>().enabled = false;
 }
