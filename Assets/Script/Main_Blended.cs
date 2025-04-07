@@ -38,7 +38,7 @@ public class Main_Blended : MonoBehaviour
 
 
     public VideoPlayer Videoplayerinlevel;
-    bool B_pause;
+    public bool B_pause;
 
 
 
@@ -137,7 +137,7 @@ public class Main_Blended : MonoBehaviour
        /////////////////////////////////////////////////////////// STR_date_with_time = System.DateTime.Now.ToString("dd-MM-yy HH:mm");
 
         i_vol = 0;
-        B_pause = false;
+        B_pause = true;
         levelno = 0;
         THI_cloneLevels();
 
@@ -814,7 +814,7 @@ public class Main_Blended : MonoBehaviour
 
     public void THI_cloneLevels()
     {
-        B_pause = false;
+        B_pause = true;
         ImmersiveObjects = new GameObject[0];
         G_worksheet.transform.GetChild(0).gameObject.SetActive(false);
         //  Debug.Log("zzzzzzz111111==="+ImmersiveObjects.Length);
@@ -822,7 +822,7 @@ public class Main_Blended : MonoBehaviour
         {
             Destroy(G_currenlevel);
         }
-        var currentLevel = Instantiate(GA_levelsIG[levelno]);
+        var currentLevel = Instantiate(MainBlendedData.instance.slideDatas[levelno].slideObject);
         currentLevel.transform.SetParent(GameObject.Find("Game_Panel").transform, false);
         currentLevel.transform.SetAsFirstSibling();
         G_currenlevel = currentLevel;
@@ -919,7 +919,6 @@ public class Main_Blended : MonoBehaviour
 
     public void levelselect(int level)
     {
-        B_pause = false;
         levelno = level;
       //  THI_videoSlidesMute();
         THI_cloneLevels();
