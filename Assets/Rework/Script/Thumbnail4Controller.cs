@@ -33,6 +33,11 @@ public class Thumbnail4Controller : MonoBehaviour
         ImageDropSlot.onDropInSlot += OnCardDrop;
     }
 
+    private void OnDisable() {
+        ImageDragandDrop.onDragStart -= OnBoardDragStart;
+        ImageDropSlot.onDropInSlot -= OnCardDrop;
+    }
+
     void OnBoardDragStart(GameObject draggedObj)
     {
         draggedObj.transform.SetAsLastSibling();

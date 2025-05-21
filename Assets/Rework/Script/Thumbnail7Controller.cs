@@ -32,6 +32,10 @@ public class Thumbnail7Controller : MonoBehaviour
         ImageDropSlot.onDropInSlot += OnObjectDrop;
     }
 
+    private void OnDisable() {
+        ImageDropSlot.onDropInSlot -= OnObjectDrop;
+    }
+
     bool ShowNextQues()
     {
         if(currentIndex == _quesitons.Length) { EnableActivityCompleted(); return false; }
