@@ -285,9 +285,9 @@ VideoPlayer:
   m_EnabledAudioTracks: 01
   m_DirectAudioMutes: 00
   m_ControlledAudioTrackCount: 1
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_SkipOnDrop: 1
-  m_Looping: 1
+  m_Looping: 0
   m_WaitForFirstFrame: 1
   m_FrameReadyEventEnabled: 0
 --- !u!1 &2114564119382639115
@@ -301,7 +301,7 @@ GameObject:
   - component: {fileID: 2114564119382639112}
   - component: {fileID: 2114564119382639113}
   m_Layer: 5
-  m_Name: 8good_bye_song
+  m_Name: 9good_bye_song
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -342,6 +342,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   videoPlayer: {fileID: 2114564118652700344}
+  videoLoading: {fileID: 4945578818612628505, guid: 7bbcfff65bcba47eca147f4dd353b3bd,
+    type: 3}
+  videoLoadingErrorPanel: {fileID: 6766524044836817131, guid: 7c1afd785e6e44b1cac383a50715afac,
+    type: 3}
+  spawnedLoader: {fileID: 0}
+  thumbnailTexture: {fileID: 2800000, guid: 4174e92087a2f534f9346a81fe09c858, type: 3}
   Cam: {fileID: 0}
   progress: {fileID: 2114564117900050652}
 --- !u!1 &2114564119492803288

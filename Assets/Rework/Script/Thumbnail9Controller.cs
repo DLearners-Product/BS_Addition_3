@@ -4,8 +4,11 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
+
+
 public class Thumbnail9Controller : MonoBehaviour
 {
+
     public List<T8Questions> questions;
     public TextMeshProUGUI mainQuestion, ques1, ques2, ques3;
     public TextMeshProUGUI answerSlot1, answerSlot2, answerSlot3;
@@ -14,6 +17,11 @@ public class Thumbnail9Controller : MonoBehaviour
     public GameObject activityCompleted;
     int currentIndex = 0;
     Vector3 currentBoardPosition;
+
+
+
+    private string _numTens, _numOnes, _denomTens, _denomOnes;
+
 
     void Start()
     {
@@ -24,26 +32,58 @@ public class Thumbnail9Controller : MonoBehaviour
         currentBoardPosition = boardObj.position;
     }
 
-    private void OnEnable() {
+    private void OnEnable()
+    {
         ImageDropSlot.onDropInSlot += OnObjectDrop;
     }
 
-    private void OnDisable() {
+
+    private void OnDisable()
+    {
         ImageDropSlot.onDropInSlot -= OnObjectDrop;
     }
 
+
     void OnObjectDrop(GameObject dragObject, GameObject dropSlotObject)
     {
-        string dropSlotText = dropSlotObject.GetComponentInChildren<TextMeshProUGUI>().text;
-        string dragObjectText = dragObject.GetComponentInChildren<TextMeshProUGUI>().text;
+        Debug.Log("OnObjectDrop");
 
-        int totalSum = int.Parse(dropSlotText) + int.Parse(dragObjectText);
-        dropSlotObject.GetComponentInChildren<TextMeshProUGUI>().text = $"{totalSum}";
+        if (dropSlotObject.transform.parent.name.Equals("N"))
+        {
+            if (dropSlotObject.CompareTag("ones"))
+            {
+                _numOnes = dragObject.GetComponentInChildren<TextMeshProUGUI>().text;
+            }
+            else if (dragObject.CompareTag("tens"))
+            {
+                _numTens = dragObject.GetComponentInChildren<TextMeshProUGUI>().text;
+            }
+
+            answerSlot1.text = _numTens + _numOnes;
+            Debug.Log(answerSlot1.text);
+        }
+        else if (dropSlotObject.transform.parent.name.Equals("D"))
+        {
+            if (dropSlotObject.CompareTag("ones"))
+            {
+                _denomOnes = dragObject.GetComponentInChildren<TextMeshProUGUI>().text;
+            }
+            else if (dropSlotObject.CompareTag("tens"))
+            {
+                _denomTens = dragObject.GetComponentInChildren<TextMeshProUGUI>().text;
+            }
+
+            answerSlot2.text = _denomTens + _denomOnes;
+            Debug.Log(answerSlot2.text);
+        }
     }
+
 
     void ShowCounter() => Utilities.Instance.ANIM_Move(counterObj.transform, counterObj.transform.position + (Vector3.left * 3f));
 
+
     void UpdateCounter() => counterObj.GetComponentInChildren<TextMeshProUGUI>().text = $"{currentIndex + 1}/{questions.Count}";
+
 
     void ShowQuestion()
     {
@@ -53,17 +93,20 @@ public class Thumbnail9Controller : MonoBehaviour
         ques3.text = questions[currentIndex].ques3;
     }
 
+
     public void OnSubmitBtnClicked()
     {
         bool ans1IsRight = answerSlot1.text.Equals(questions[currentIndex].ans1);
         bool ans2IsRight = answerSlot2.text.Equals(questions[currentIndex].ans2);
         bool ans3IsRight = answerSlot3.text.Equals(questions[currentIndex].ans3);
 
-        if(ans1IsRight && ans2IsRight && ans3IsRight)
+        if (ans1IsRight && ans2IsRight && ans3IsRight)
         {
             Invoke(nameof(MoveBoardLeft), 1.5f);
-        }else ResetAnswers();
+        }
+        else ResetAnswers();
     }
+
 
     IEnumerator PlayAuido(Transform questionObj, AudioClip questionClip, Action callback = null)
     {
@@ -74,14 +117,16 @@ public class Thumbnail9Controller : MonoBehaviour
         Utilities.Instance.ANIM_ScaleEffect(questionObj, Vector3.one);
     }
 
+
     void MoveBoardLeft()
     {
         Utilities.Instance.ANIM_Move(boardObj, currentBoardPosition + (Vector3.left * 20), callBack: () =>
         {
             ChangeQuestion();
-            Utilities.Instance.ANIM_Move(boardObj, currentBoardPosition, callBack:PlayQuestionsAudio);
+            Utilities.Instance.ANIM_Move(boardObj, currentBoardPosition, callBack: PlayQuestionsAudio);
         });
     }
+
 
     private void PlayQuestionsAudio()
     {
@@ -105,6 +150,7 @@ public class Thumbnail9Controller : MonoBehaviour
                 );
     }
 
+
     void ResetAnswers()
     {
         answerSlot1.text = "0";
@@ -112,11 +158,12 @@ public class Thumbnail9Controller : MonoBehaviour
         answerSlot3.text = "0";
     }
 
+
     void ChangeQuestion()
     {
         currentIndex++;
 
-        if(currentIndex == questions.Count) { EnableActivityCompleted(); return; }
+        if (currentIndex == questions.Count) { EnableActivityCompleted(); return; }
 
         UpdateCounter();
         ShowQuestion();
@@ -125,6 +172,7 @@ public class Thumbnail9Controller : MonoBehaviour
 
     void EnableActivityCompleted() => activityCompleted.SetActive(true);
 }
+
 
 [Serializable]
 public class T8Questions

@@ -2187,6 +2187,7 @@ MonoBehaviour:
   max: {x: 0, y: 0}
   originalParent: {fileID: 0}
   resetPositionOnDrop: 1
+  _isDropped: 0
 --- !u!1 &3503838448613181415
 GameObject:
   m_ObjectHideFlags: 0
@@ -2563,6 +2564,7 @@ MonoBehaviour:
   max: {x: 0, y: 0}
   originalParent: {fileID: 0}
   resetPositionOnDrop: 1
+  _isDropped: 0
 --- !u!1 &3503838448734424711
 GameObject:
   m_ObjectHideFlags: 0
@@ -2671,6 +2673,7 @@ MonoBehaviour:
   max: {x: 0, y: 0}
   originalParent: {fileID: 0}
   resetPositionOnDrop: 1
+  _isDropped: 0
 --- !u!1 &3503838448736740684
 GameObject:
   m_ObjectHideFlags: 0
@@ -2913,6 +2916,7 @@ MonoBehaviour:
   max: {x: 0, y: 0}
   originalParent: {fileID: 0}
   resetPositionOnDrop: 1
+  _isDropped: 0
 --- !u!1 &3503838448978701095
 GameObject:
   m_ObjectHideFlags: 0
@@ -3021,6 +3025,7 @@ MonoBehaviour:
   max: {x: 0, y: 0}
   originalParent: {fileID: 0}
   resetPositionOnDrop: 1
+  _isDropped: 0
 --- !u!1 &3503838448982118295
 GameObject:
   m_ObjectHideFlags: 0
@@ -3129,6 +3134,7 @@ MonoBehaviour:
   max: {x: 0, y: 0}
   originalParent: {fileID: 0}
   resetPositionOnDrop: 1
+  _isDropped: 0
 --- !u!1 &3503838448986113116
 GameObject:
   m_ObjectHideFlags: 0
@@ -3371,6 +3377,7 @@ MonoBehaviour:
   max: {x: 0, y: 0}
   originalParent: {fileID: 0}
   resetPositionOnDrop: 1
+  _isDropped: 0
 --- !u!1 &3503838449034954425
 GameObject:
   m_ObjectHideFlags: 0
@@ -3836,6 +3843,7 @@ MonoBehaviour:
   max: {x: 0, y: 0}
   originalParent: {fileID: 0}
   resetPositionOnDrop: 1
+  _isDropped: 0
 --- !u!1 &3503838449223514811
 GameObject:
   m_ObjectHideFlags: 0
@@ -4078,6 +4086,7 @@ MonoBehaviour:
   max: {x: 0, y: 0}
   originalParent: {fileID: 0}
   resetPositionOnDrop: 1
+  _isDropped: 0
 --- !u!1 &3503838449324558737
 GameObject:
   m_ObjectHideFlags: 0

@@ -5,6 +5,8 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
+
+
 public class Thumbnail5Controller : MonoBehaviour
 {
     public List<QuestionOptions> questionOptions;
@@ -14,9 +16,16 @@ public class Thumbnail5Controller : MonoBehaviour
     public Transform questionStartPos, questionEndPos;
     public Transform counterPanel;
     public GameObject blockPanel;
-    public AudioClip rightSFX, wrongSFX;
     public GameObject activityCompleted;
+
+
+    [Space(10)]
+    [Header("PARTICLES---------------------------------------------------------")]
+    [SerializeField] private ParticleSystem PS_CorrectAnswer;
+
+
     int currentIndex = 0;
+
 
     void Start()
     {
@@ -26,21 +35,25 @@ public class Thumbnail5Controller : MonoBehaviour
         DisableActivityCompleted();
     }
 
+
     private void LowerCounterDisplay()
     {
         Utilities.Instance.ANIM_Move(counterPanel, counterPanel.transform.position + (Vector3.down * 2.5f));
     }
+
 
     void EnableBLockPanel() => blockPanel.SetActive(true);
     void DisableBlockPanel() => blockPanel.SetActive(false);
     void DisableActivityCompleted() => activityCompleted.SetActive(false);
     void EnableActivityCompleted() => activityCompleted.SetActive(true);
 
+
     void UpdateCounter() => counterPanel.GetComponentInChildren<TextMeshProUGUI>().text = $"{currentIndex + 1}/{questionOptions.Count}";
+
 
     void SwitchNextQuestion()
     {
-        if(currentIndex == questionOptions.Count) { EnableActivityCompleted(); return; }
+        if (currentIndex == questionOptions.Count) { EnableActivityCompleted(); return; }
 
         questionText.text = questionOptions[currentIndex].question;
 
@@ -51,8 +64,9 @@ public class Thumbnail5Controller : MonoBehaviour
         ResetRightAnswer();
         UpdateCounter();
         DisableBlockPanel();
-        Utilities.Instance.ANIM_Move(qoDisplayPanel, new Vector3(0,qoDisplayPanel.position.y,0), callBack: PlayCurrentQuestionVO);
+        Utilities.Instance.ANIM_Move(qoDisplayPanel, new Vector3(0, qoDisplayPanel.position.y, 0), callBack: PlayCurrentQuestionVO);
     }
+
 
     void ResetRightAnswer()
     {
@@ -62,39 +76,71 @@ public class Thumbnail5Controller : MonoBehaviour
         }
     }
 
+
     void ChangePanel()
     {
-        Utilities.Instance.ANIM_Move(qoDisplayPanel, new Vector3(questionEndPos.position.x, qoDisplayPanel.position.y, questionEndPos.position.z), 
-        callBack: () => {
+        Utilities.Instance.ANIM_Move(qoDisplayPanel, new Vector3(questionEndPos.position.x, qoDisplayPanel.position.y, questionEndPos.position.z),
+        callBack: () =>
+        {
             qoDisplayPanel.transform.position = new Vector3(questionStartPos.position.x, qoDisplayPanel.position.y, questionStartPos.position.z);
             currentIndex++;
             SwitchNextQuestion();
         });
     }
 
-#region Listeners
+
+    #region Listeners
 
     public void OnOptionClickListeners()
     {
+        Utilities.Instance.StopVoice();
+
         var selectedOpt = EventSystem.current.currentSelectedGameObject;
         var selOptTxt = selectedOpt.GetComponentInChildren<TextMeshProUGUI>().text;
-        if(questionOptions[currentIndex].IsRightAnswer(selOptTxt))
+        if (questionOptions[currentIndex].IsRightAnswer(selOptTxt))
         {
+            //*correct answer
             EnableBLockPanel();
+            PlayParticles(selectedOpt.transform.position);
             selectedOpt.transform.GetChild(0).gameObject.SetActive(true);
-            AudioManager.PlayAudio(rightSFX);
+            Utilities.Instance.PlayCorrect();
             Utilities.Instance.ANIM_CorrectScaleEffect(selectedOpt.transform, callback: ChangePanel);
-        }else{
-            AudioManager.PlayAudio(wrongSFX);
+        }
+        else
+        {
+            //!wrong answer
+            Utilities.Instance.PlayWrong();
             Utilities.Instance.ANIM_WrongShakeEffect(selectedOpt.transform);
         }
     }
 
-    public void OnSpeakerBTNClicked() => PlayCurrentQuestionVO();
 
-    void PlayCurrentQuestionVO() => AudioManager.PlayAudio(questionOptions[currentIndex].questionCLip);
+    public void PlayCurrentQuestionVO()
+    {
+        Utilities.Instance.PlayVoice(questionOptions[currentIndex].questionCLip);
+    }
 
-#endregion
+
+    private void PlayParticles(Vector3 pos)
+    {
+        PS_CorrectAnswer.transform.position = pos;
+        PS_CorrectAnswer.Play();
+    }
+
+
+    void OnDisable()
+    {
+        Utilities.Instance.StopAllSounds();
+    }
+
+    void OnDestroy()
+    {
+        Utilities.Instance.StopAllSounds();
+    }
+
+
+    #endregion
+
 
 }
 

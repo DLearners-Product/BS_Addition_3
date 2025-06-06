@@ -6,6 +6,8 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
+
+
 public class Thumbnail8Controller : MonoBehaviour
 {
     public MatchingObjects[] matchingObjs;
@@ -23,6 +25,8 @@ public class Thumbnail8Controller : MonoBehaviour
     GameObject _currentColorObj;
     int totalyAnsweredCount = 0;
 
+
+
     void Start()
     {
         AudioManager.PlayAudio(slideAudio);
@@ -33,6 +37,7 @@ public class Thumbnail8Controller : MonoBehaviour
         _currentSelectedColorSTR = "NoColor";
         EnableSelectedColor(_currentColorObj);
     }
+
 
     public void OnColorClicked()
     {
@@ -46,6 +51,7 @@ public class Thumbnail8Controller : MonoBehaviour
         Debug.Log($"_currentSelectedColorSTR :: {_currentSelectedColorSTR}");
         Debug.Log(_selectedObj.name, _selectedObj);
         Debug.Log(selectedColorCode);
+
 
         switch (selectedColor)
         {
@@ -68,17 +74,21 @@ public class Thumbnail8Controller : MonoBehaviour
         }
     }
 
+
     public void OnQuestionClicked()
     {
         var _selectedObj = EventSystem.current.currentSelectedGameObject;
         string selectedQues = _selectedObj.GetComponentInChildren<TextMeshProUGUI>().text;
         foreach (var matchObj in matchingObjs)
         {
-            if(matchObj.questionObj.GetComponentInChildren<TextMeshProUGUI>().text == selectedQues){
-                if(matchObj.answer == _currentSelectedColorSTR){
+            if (matchObj.questionObj.GetComponentInChildren<TextMeshProUGUI>().text == selectedQues)
+            {
+                if (matchObj.answer == _currentSelectedColorSTR)
+                {
                     totalyAnsweredCount++;
                     UpdateCounter();
-                    switch(_currentSelectedColorSTR) {
+                    switch (_currentSelectedColorSTR)
+                    {
                         case "Red":
                             matchObj.answerObj.GetComponent<Image>().color = Color.red;
                             break;
@@ -90,27 +100,62 @@ public class Thumbnail8Controller : MonoBehaviour
                             break;
                     }
                     _selectedObj.SetActive(false);
-                }else{
+                }
+                else
+                {
                     Debug.Log("Wrogn answer");
                 }
                 break;
             }
         }
 
-        if(totalyAnsweredCount == matchingObjs.Length) Invoke(nameof(EnableActivityCompleted), 1.5f);
+        if (totalyAnsweredCount == matchingObjs.Length) Invoke(nameof(EnableActivityCompleted), 1.5f);
     }
 
+
     void SetCursorSprite(Texture2D cursorSprite) => Cursor.SetCursor(cursorSprite, Vector2.one, CursorMode.Auto);
+
+
     void EnableActivityCompleted() => activityCompleted.SetActive(true);
+
+
     void UpdateCounter() => counterObj.GetComponentInChildren<TextMeshProUGUI>().text = $"{totalyAnsweredCount}/{matchingObjs.Length}";
-    void SetCurrentSelectedColor(string displayText, Color fontColor, Color displayColor) {
+
+
+    void SetCurrentSelectedColor(string displayText, Color fontColor, Color displayColor)
+    {
         selectedAnswer.text = displayText;
         selectedAnswer.color = fontColor;
         selectedColorDisplay.color = displayColor;
     }
+
+
     void EnableSelectedColor(GameObject _selectedColorObj) => _selectedColorObj.GetComponent<Image>().enabled = true;
+
+
     void DisablePrevSelectedColor() => _currentColorObj.GetComponent<Image>().enabled = false;
+
+
+    void OnDisable()
+    {
+        Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
+        Utilities.Instance.StopAllSounds();
+    }
+
+
+    void OnDestroy()
+    {
+        Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
+        Utilities.Instance.StopAllSounds();
+    }
+
+
 }
+
+
+
+
+
 
 [System.Serializable]
 public class MatchingObjects

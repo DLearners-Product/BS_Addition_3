@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 
 [RequireComponent(typeof(CanvasGroup))]
-public class ImageDragandDrop : MonoBehaviour, IBeginDragHandler,IEndDragHandler,IDragHandler
+public class ImageDragandDrop : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHandler
 {
     Vector2 mousePos;
     Camera mainCam;
@@ -22,6 +22,10 @@ public class ImageDragandDrop : MonoBehaviour, IBeginDragHandler,IEndDragHandler
     public static OnDragDelegate onDrag;
     public static OnDragEndDelegate onDragEnd;
 
+    public bool _isDropped = false;
+
+
+
     private void Awake()
     {
         mainCam = Camera.main;
@@ -30,6 +34,7 @@ public class ImageDragandDrop : MonoBehaviour, IBeginDragHandler,IEndDragHandler
         min = GetComponent<RectTransform>().offsetMin;
         max = GetComponent<RectTransform>().offsetMax;
     }
+
 
     public void OnBeginDrag(PointerEventData eventData)
     {
@@ -40,6 +45,7 @@ public class ImageDragandDrop : MonoBehaviour, IBeginDragHandler,IEndDragHandler
         canvasGroup.blocksRaycasts = false;
     }
 
+
     public void OnDrag(PointerEventData eventData)
     {
         onDrag?.Invoke(eventData.pointerDrag);
@@ -49,16 +55,25 @@ public class ImageDragandDrop : MonoBehaviour, IBeginDragHandler,IEndDragHandler
         currentPos = mousePos;
     }
 
+
     public void OnEndDrag(PointerEventData eventData)
     {
         onDragEnd?.Invoke(eventData.pointerDrag);
 
         canvasGroup.alpha = 1f;
         canvasGroup.blocksRaycasts = true;
-        if(originalParent.Equals(gameObject.transform.parent) && resetPositionOnDrop){
+
+        // if (originalParent.Equals(gameObject.transform.parent) && resetPositionOnDrop)
+        // {
+        //     ReturnToOriginalPos();
+        // }
+
+        if (!_isDropped)
+        {
             ReturnToOriginalPos();
         }
     }
+
 
     public void ResetInitialPositoin()
     {
@@ -66,10 +81,13 @@ public class ImageDragandDrop : MonoBehaviour, IBeginDragHandler,IEndDragHandler
         max = GetComponent<RectTransform>().offsetMax;
     }
 
+
     public void ReturnToOriginalPos()
     {
         transform.SetParent(originalParent);
         GetComponent<RectTransform>().offsetMin = min;
         GetComponent<RectTransform>().offsetMax = max;
     }
+
+
 }

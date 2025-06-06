@@ -11,7 +11,7 @@ public class AudioManager : MonoBehaviour
     {
         var gamePanel = GameObject.Find("Game_Panel");
         GameObject audioManager = new GameObject();
-        if(gamePanel != null) audioManager.transform.SetParent(gamePanel.transform.GetChild(0));
+        if (gamePanel != null) audioManager.transform.SetParent(gamePanel.transform.GetChild(0));
 
         audioManager.AddComponent<AudioSource>().clip = audioClip;
         audioManager.AddComponent<AudioManager>();
@@ -37,10 +37,12 @@ public class AudioManager : MonoBehaviour
     {
         audioSource.clip = queueClips.Dequeue();
         audioSource.Play();
-        if(queueClips.Count > 0)
+        if (queueClips.Count > 0)
         {
             Invoke(nameof(PlayAllClips), audioSource.clip.length);
-        }else{
+        }
+        else
+        {
             Invoke(nameof(DestroyObj), gameObject.GetComponent<AudioSource>().clip.length);
         }
     }
@@ -52,7 +54,27 @@ public class AudioManager : MonoBehaviour
         Invoke(nameof(DestroyObj), gameObject.GetComponent<AudioSource>().clip.length);
     }
 
-    void DestroyObj() {
+    void DestroyObj()
+    {
         Destroy(gameObject);
     }
+
+
+
+
+
+
+    public void PlayVO(AudioClip clip)
+    {
+        audioSource.PlayOneShot(clip);
+    }
+
+
+
+
+
+
+
+
+
 }

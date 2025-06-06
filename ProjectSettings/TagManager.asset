@@ -6,6 +6,9 @@ TagManager:
   tags:
   - answer
   - Immersive
+  - Effects
+  - Tens
+  - Ones
   layers:
   - Default
   - TransparentFX
