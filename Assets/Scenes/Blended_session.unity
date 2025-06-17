@@ -233,6 +233,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 218460562}
     m_Modifications:
+    - target: {fileID: 5974346225187424582, guid: 62be2f085677b1849bd2e6f8d158252b,
+        type: 3}
+      propertyPath: m_Name
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5974346225189548712, guid: 62be2f085677b1849bd2e6f8d158252b,
+        type: 3}
+      propertyPath: m_Name
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5974346225206104482, guid: 62be2f085677b1849bd2e6f8d158252b,
         type: 3}
       propertyPath: m_Name
@@ -342,6 +352,56 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5974346225301737482, guid: 62be2f085677b1849bd2e6f8d158252b,
+        type: 3}
+      propertyPath: m_Name
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5974346225559461648, guid: 62be2f085677b1849bd2e6f8d158252b,
+        type: 3}
+      propertyPath: m_Name
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5974346225632653677, guid: 62be2f085677b1849bd2e6f8d158252b,
+        type: 3}
+      propertyPath: m_Name
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 5974346226119778121, guid: 62be2f085677b1849bd2e6f8d158252b,
+        type: 3}
+      propertyPath: m_Name
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5974346226257918484, guid: 62be2f085677b1849bd2e6f8d158252b,
+        type: 3}
+      propertyPath: m_Name
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5974346226765575759, guid: 62be2f085677b1849bd2e6f8d158252b,
+        type: 3}
+      propertyPath: m_Name
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5974346226786197721, guid: 62be2f085677b1849bd2e6f8d158252b,
+        type: 3}
+      propertyPath: m_Name
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 5974346226861600637, guid: 62be2f085677b1849bd2e6f8d158252b,
+        type: 3}
+      propertyPath: m_Name
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5974346226962552803, guid: 62be2f085677b1849bd2e6f8d158252b,
+        type: 3}
+      propertyPath: m_Name
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5974346227054713115, guid: 62be2f085677b1849bd2e6f8d158252b,
+        type: 3}
+      propertyPath: m_Name
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 62be2f085677b1849bd2e6f8d158252b, type: 3}
@@ -1366,7 +1426,362 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4febab028aff7249abf4dfa24972b18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  activityContents: []
+  activityContents:
+  - slideNo: 3
+    activityName: Hidden image
+    hasSubquestion: 0
+    questionType: 1
+    staticQA:
+      questionType: 1
+      optionType: 1
+      questions:
+      - question:
+          text: 20 + 5
+          id: 3001
+          _sprite: {fileID: 0}
+          texture2D: {fileID: 0}
+          audioClip: {fileID: 0}
+          image_url: 
+          audio_url: 
+        answers: []
+      - question:
+          text: 19 + 2
+          id: 3002
+          _sprite: {fileID: 0}
+          texture2D: {fileID: 0}
+          audioClip: {fileID: 0}
+          image_url: 
+          audio_url: 
+        answers: []
+      - question:
+          text: 32 + 5
+          id: 3003
+          _sprite: {fileID: 0}
+          texture2D: {fileID: 0}
+          audioClip: {fileID: 0}
+          image_url: 
+          audio_url: 
+        answers: []
+      - question:
+          text: 16 + 11
+          id: 3004
+          _sprite: {fileID: 0}
+          texture2D: {fileID: 0}
+          audioClip: {fileID: 0}
+          image_url: 
+          audio_url: 
+        answers: []
+      - question:
+          text: 25 + 5
+          id: 3005
+          _sprite: {fileID: 0}
+          texture2D: {fileID: 0}
+          audioClip: {fileID: 0}
+          image_url: 
+          audio_url: 
+        answers: []
+      - question:
+          text: 40 + 10
+          id: 3006
+          _sprite: {fileID: 0}
+          texture2D: {fileID: 0}
+          audioClip: {fileID: 0}
+          image_url: 
+          audio_url: 
+        answers: []
+      - question:
+          text: 55 + 5
+          id: 3007
+          _sprite: {fileID: 0}
+          texture2D: {fileID: 0}
+          audioClip: {fileID: 0}
+          image_url: 
+          audio_url: 
+        answers: []
+      - question:
+          text: 23 + 6
+          id: 3008
+          _sprite: {fileID: 0}
+          texture2D: {fileID: 0}
+          audioClip: {fileID: 0}
+          image_url: 
+          audio_url: 
+        answers: []
+      - question:
+          text: 10 + 10
+          id: 3009
+          _sprite: {fileID: 0}
+          texture2D: {fileID: 0}
+          audioClip: {fileID: 0}
+          image_url: 
+          audio_url: 
+        answers: []
+      - question:
+          text: 45 + 6
+          id: 3010
+          _sprite: {fileID: 0}
+          texture2D: {fileID: 0}
+          audioClip: {fileID: 0}
+          image_url: 
+          audio_url: 
+        answers: []
+      - question:
+          text: 62 + 8
+          id: 3011
+          _sprite: {fileID: 0}
+          texture2D: {fileID: 0}
+          audioClip: {fileID: 0}
+          image_url: 
+          audio_url: 
+        answers: []
+      - question:
+          text: 50 + 6
+          id: 3012
+          _sprite: {fileID: 0}
+          texture2D: {fileID: 0}
+          audioClip: {fileID: 0}
+          image_url: 
+          audio_url: 
+        answers: []
+      options: []
+      additionalFields: []
+    dynamicQA:
+      questionType: 0
+      optionType: 0
+      questions: []
+      additionalFields: []
+    staticQAWithSQ:
+      qaWithSubQuestion: []
+  - slideNo: 4
+    activityName: Hidden image
+    hasSubquestion: 0
+    questionType: 2
+    staticQA:
+      questionType: 1
+      optionType: 1
+      questions:
+      - question:
+          text: 20 + 5
+          id: 3001
+          _sprite: {fileID: 0}
+          texture2D: {fileID: 0}
+          audioClip: {fileID: 0}
+          image_url: 
+          audio_url: 
+        answers: []
+      options: []
+      additionalFields: []
+    dynamicQA:
+      questionType: 1
+      optionType: 1
+      questions:
+      - question:
+          text: I have 4 pencils and Jitu has 7 pencils. How many pencils do we have
+            together?
+          id: 4001
+          _sprite: {fileID: 0}
+          texture2D: {fileID: 0}
+          audioClip: {fileID: 0}
+          image_url: 
+          audio_url: 
+        options:
+        - text: 6
+          id: 1
+          _sprite: {fileID: 0}
+          texture2D: {fileID: 0}
+          audioClip: {fileID: 0}
+          image_url: 
+          audio_url: 
+          isAnswer: 0
+        - text: 7
+          id: 2
+          _sprite: {fileID: 0}
+          texture2D: {fileID: 0}
+          audioClip: {fileID: 0}
+          image_url: 
+          audio_url: 
+          isAnswer: 0
+        - text: 11
+          id: 3
+          _sprite: {fileID: 0}
+          texture2D: {fileID: 0}
+          audioClip: {fileID: 0}
+          image_url: 
+          audio_url: 
+          isAnswer: 1
+      - question:
+          text: 'A squirrel has 9 nuts. He finds 8 more. What is the total number
+            of nuts? '
+          id: 4002
+          _sprite: {fileID: 0}
+          texture2D: {fileID: 0}
+          audioClip: {fileID: 0}
+          image_url: 
+          audio_url: 
+        options:
+        - text: 17
+          id: 1
+          _sprite: {fileID: 0}
+          texture2D: {fileID: 0}
+          audioClip: {fileID: 0}
+          image_url: 
+          audio_url: 
+          isAnswer: 1
+        - text: 15
+          id: 2
+          _sprite: {fileID: 0}
+          texture2D: {fileID: 0}
+          audioClip: {fileID: 0}
+          image_url: 
+          audio_url: 
+          isAnswer: 0
+        - text: 71
+          id: 3
+          _sprite: {fileID: 0}
+          texture2D: {fileID: 0}
+          audioClip: {fileID: 0}
+          image_url: 
+          audio_url: 
+          isAnswer: 0
+      - question:
+          text: There are 7 bees in the hive. 6 more fly in. How many bees are there
+            in all?
+          id: 4003
+          _sprite: {fileID: 0}
+          texture2D: {fileID: 0}
+          audioClip: {fileID: 0}
+          image_url: 
+          audio_url: 
+        options:
+        - text: 10
+          id: 1
+          _sprite: {fileID: 0}
+          texture2D: {fileID: 0}
+          audioClip: {fileID: 0}
+          image_url: 
+          audio_url: 
+          isAnswer: 0
+        - text: 13
+          id: 2
+          _sprite: {fileID: 0}
+          texture2D: {fileID: 0}
+          audioClip: {fileID: 0}
+          image_url: 
+          audio_url: 
+          isAnswer: 1
+        - text: 7
+          id: 3
+          _sprite: {fileID: 0}
+          texture2D: {fileID: 0}
+          audioClip: {fileID: 0}
+          image_url: 
+          audio_url: 
+          isAnswer: 0
+      - question:
+          text: 'Shan has 4 pets and Khan has 8 pets. How many pets do they have
+            altogether? '
+          id: 4004
+          _sprite: {fileID: 0}
+          texture2D: {fileID: 0}
+          audioClip: {fileID: 0}
+          image_url: 
+          audio_url: 
+        options:
+        - text: 12
+          id: 1
+          _sprite: {fileID: 0}
+          texture2D: {fileID: 0}
+          audioClip: {fileID: 0}
+          image_url: 
+          audio_url: 
+          isAnswer: 1
+        - text: 10
+          id: 2
+          _sprite: {fileID: 0}
+          texture2D: {fileID: 0}
+          audioClip: {fileID: 0}
+          image_url: 
+          audio_url: 
+          isAnswer: 0
+        - text: 9
+          id: 3
+          _sprite: {fileID: 0}
+          texture2D: {fileID: 0}
+          audioClip: {fileID: 0}
+          image_url: 
+          audio_url: 
+          isAnswer: 0
+      - question:
+          text: Kumar had 8 frogs on his right side and 6 frogs on his left side.
+            What is the total number of frogs?
+          id: 4005
+          _sprite: {fileID: 0}
+          texture2D: {fileID: 0}
+          audioClip: {fileID: 0}
+          image_url: 
+          audio_url: 
+        options:
+        - text: 7
+          id: 1
+          _sprite: {fileID: 0}
+          texture2D: {fileID: 0}
+          audioClip: {fileID: 0}
+          image_url: 
+          audio_url: 
+          isAnswer: 0
+        - text: 14
+          id: 2
+          _sprite: {fileID: 0}
+          texture2D: {fileID: 0}
+          audioClip: {fileID: 0}
+          image_url: 
+          audio_url: 
+          isAnswer: 1
+        - text: 7
+          id: 3
+          _sprite: {fileID: 0}
+          texture2D: {fileID: 0}
+          audioClip: {fileID: 0}
+          image_url: 
+          audio_url: 
+          isAnswer: 0
+      - question:
+          text: Das has 9 buns and Bala has 6 buns. How many buns do they have in
+            all?
+          id: 4006
+          _sprite: {fileID: 0}
+          texture2D: {fileID: 0}
+          audioClip: {fileID: 0}
+          image_url: 
+          audio_url: 
+        options:
+        - text: 10
+          id: 1
+          _sprite: {fileID: 0}
+          texture2D: {fileID: 0}
+          audioClip: {fileID: 0}
+          image_url: 
+          audio_url: 
+          isAnswer: 0
+        - text: 8
+          id: 2
+          _sprite: {fileID: 0}
+          texture2D: {fileID: 0}
+          audioClip: {fileID: 0}
+          image_url: 
+          audio_url: 
+          isAnswer: 0
+        - text: 15
+          id: 3
+          _sprite: {fileID: 0}
+          texture2D: {fileID: 0}
+          audioClip: {fileID: 0}
+          image_url: 
+          audio_url: 
+          isAnswer: 1
+      additionalFields: []
+    staticQAWithSQ:
+      qaWithSubQuestion: []
 --- !u!1 &398870334
 GameObject:
   m_ObjectHideFlags: 0
@@ -1888,7 +2303,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &508780578
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3209,7 +3624,7 @@ MonoBehaviour:
     HAS_WORKSHEET: 0
     HAS_SYLLABLE: 0
     HAS_GRAMMER: 0
-    HAS_ACTIVITY: 0
+    HAS_ACTIVITY: 1
     IS_MANUAL_ACTIVITY: 0
   - name: 4count_and_match
     slideObject: {fileID: 1156629667}
@@ -3222,7 +3637,7 @@ MonoBehaviour:
     HAS_WORKSHEET: 0
     HAS_SYLLABLE: 0
     HAS_GRAMMER: 0
-    HAS_ACTIVITY: 0
+    HAS_ACTIVITY: 1
     IS_MANUAL_ACTIVITY: 0
   - name: 5regrouping_intro
     slideObject: {fileID: 1753047240}
@@ -3248,7 +3663,7 @@ MonoBehaviour:
     HAS_WORKSHEET: 0
     HAS_SYLLABLE: 0
     HAS_GRAMMER: 0
-    HAS_ACTIVITY: 0
+    HAS_ACTIVITY: 1
     IS_MANUAL_ACTIVITY: 0
   - name: 7color_the_sum
     slideObject: {fileID: 1255654590}
@@ -3261,7 +3676,7 @@ MonoBehaviour:
     HAS_WORKSHEET: 0
     HAS_SYLLABLE: 0
     HAS_GRAMMER: 0
-    HAS_ACTIVITY: 0
+    HAS_ACTIVITY: 1
     IS_MANUAL_ACTIVITY: 0
   - name: 8read_and_resolve
     slideObject: {fileID: 7943296187194872116}

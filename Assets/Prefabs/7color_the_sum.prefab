@@ -3469,7 +3469,7 @@ MonoBehaviour:
   - {fileID: 2800000, guid: 669c09074c4eba8458490243ce09dd96, type: 3}
   - {fileID: 2800000, guid: 8eb5fb2baa7ebf6488276c83b10b4e23, type: 3}
   - {fileID: 2800000, guid: 2b7eb7352e53779489f7ddd2cabe71a2, type: 3}
-  answers: 0a0000000500000014000000
+  Ans: 030000000a0000000500000014000000
   answerMatchColor:
   - Red
   - Yellow
@@ -3484,6 +3484,8 @@ MonoBehaviour:
   slideAudio: {fileID: 8300000, guid: 9a201d86f7a775f4a8c09f9c5876701b, type: 3}
   selectedAnswer: {fileID: 5997905167140124841}
   activityCompleted: {fileID: 8320958113329847605}
+  questionGO: {fileID: 0}
+  optionsGO: []
 --- !u!1 &7072879883877877233
 GameObject:
   m_ObjectHideFlags: 0
