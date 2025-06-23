@@ -1782,6 +1782,236 @@ MonoBehaviour:
       additionalFields: []
     staticQAWithSQ:
       qaWithSubQuestion: []
+  - slideNo: 6
+    activityName: Addition with regrouping
+    hasSubquestion: 0
+    questionType: 2
+    staticQA:
+      questionType: 1
+      optionType: 1
+      questions:
+      - question:
+          text: 20 + 5
+          id: 3001
+          _sprite: {fileID: 0}
+          texture2D: {fileID: 0}
+          audioClip: {fileID: 0}
+          image_url: 
+          audio_url: 
+        answers: []
+      options: []
+      additionalFields: []
+    dynamicQA:
+      questionType: 1
+      optionType: 1
+      questions:
+      - question:
+          text: I have 4 pencils and Jitu has 7 pencils. How many pencils do we have
+            together?
+          id: 4001
+          _sprite: {fileID: 0}
+          texture2D: {fileID: 0}
+          audioClip: {fileID: 0}
+          image_url: 
+          audio_url: 
+        options:
+        - text: 6
+          id: 1
+          _sprite: {fileID: 0}
+          texture2D: {fileID: 0}
+          audioClip: {fileID: 0}
+          image_url: 
+          audio_url: 
+          isAnswer: 0
+        - text: 7
+          id: 2
+          _sprite: {fileID: 0}
+          texture2D: {fileID: 0}
+          audioClip: {fileID: 0}
+          image_url: 
+          audio_url: 
+          isAnswer: 0
+        - text: 11
+          id: 3
+          _sprite: {fileID: 0}
+          texture2D: {fileID: 0}
+          audioClip: {fileID: 0}
+          image_url: 
+          audio_url: 
+          isAnswer: 1
+      - question:
+          text: 'A squirrel has 9 nuts. He finds 8 more. What is the total number
+            of nuts? '
+          id: 4002
+          _sprite: {fileID: 0}
+          texture2D: {fileID: 0}
+          audioClip: {fileID: 0}
+          image_url: 
+          audio_url: 
+        options:
+        - text: 17
+          id: 1
+          _sprite: {fileID: 0}
+          texture2D: {fileID: 0}
+          audioClip: {fileID: 0}
+          image_url: 
+          audio_url: 
+          isAnswer: 1
+        - text: 15
+          id: 2
+          _sprite: {fileID: 0}
+          texture2D: {fileID: 0}
+          audioClip: {fileID: 0}
+          image_url: 
+          audio_url: 
+          isAnswer: 0
+        - text: 71
+          id: 3
+          _sprite: {fileID: 0}
+          texture2D: {fileID: 0}
+          audioClip: {fileID: 0}
+          image_url: 
+          audio_url: 
+          isAnswer: 0
+      - question:
+          text: There are 7 bees in the hive. 6 more fly in. How many bees are there
+            in all?
+          id: 4003
+          _sprite: {fileID: 0}
+          texture2D: {fileID: 0}
+          audioClip: {fileID: 0}
+          image_url: 
+          audio_url: 
+        options:
+        - text: 10
+          id: 1
+          _sprite: {fileID: 0}
+          texture2D: {fileID: 0}
+          audioClip: {fileID: 0}
+          image_url: 
+          audio_url: 
+          isAnswer: 0
+        - text: 13
+          id: 2
+          _sprite: {fileID: 0}
+          texture2D: {fileID: 0}
+          audioClip: {fileID: 0}
+          image_url: 
+          audio_url: 
+          isAnswer: 1
+        - text: 7
+          id: 3
+          _sprite: {fileID: 0}
+          texture2D: {fileID: 0}
+          audioClip: {fileID: 0}
+          image_url: 
+          audio_url: 
+          isAnswer: 0
+      - question:
+          text: 'Shan has 4 pets and Khan has 8 pets. How many pets do they have
+            altogether? '
+          id: 4004
+          _sprite: {fileID: 0}
+          texture2D: {fileID: 0}
+          audioClip: {fileID: 0}
+          image_url: 
+          audio_url: 
+        options:
+        - text: 12
+          id: 1
+          _sprite: {fileID: 0}
+          texture2D: {fileID: 0}
+          audioClip: {fileID: 0}
+          image_url: 
+          audio_url: 
+          isAnswer: 1
+        - text: 10
+          id: 2
+          _sprite: {fileID: 0}
+          texture2D: {fileID: 0}
+          audioClip: {fileID: 0}
+          image_url: 
+          audio_url: 
+          isAnswer: 0
+        - text: 9
+          id: 3
+          _sprite: {fileID: 0}
+          texture2D: {fileID: 0}
+          audioClip: {fileID: 0}
+          image_url: 
+          audio_url: 
+          isAnswer: 0
+      - question:
+          text: Kumar had 8 frogs on his right side and 6 frogs on his left side.
+            What is the total number of frogs?
+          id: 4005
+          _sprite: {fileID: 0}
+          texture2D: {fileID: 0}
+          audioClip: {fileID: 0}
+          image_url: 
+          audio_url: 
+        options:
+        - text: 7
+          id: 1
+          _sprite: {fileID: 0}
+          texture2D: {fileID: 0}
+          audioClip: {fileID: 0}
+          image_url: 
+          audio_url: 
+          isAnswer: 0
+        - text: 14
+          id: 2
+          _sprite: {fileID: 0}
+          texture2D: {fileID: 0}
+          audioClip: {fileID: 0}
+          image_url: 
+          audio_url: 
+          isAnswer: 1
+        - text: 7
+          id: 3
+          _sprite: {fileID: 0}
+          texture2D: {fileID: 0}
+          audioClip: {fileID: 0}
+          image_url: 
+          audio_url: 
+          isAnswer: 0
+      - question:
+          text: Das has 9 buns and Bala has 6 buns. How many buns do they have in
+            all?
+          id: 4006
+          _sprite: {fileID: 0}
+          texture2D: {fileID: 0}
+          audioClip: {fileID: 0}
+          image_url: 
+          audio_url: 
+        options:
+        - text: 10
+          id: 1
+          _sprite: {fileID: 0}
+          texture2D: {fileID: 0}
+          audioClip: {fileID: 0}
+          image_url: 
+          audio_url: 
+          isAnswer: 0
+        - text: 8
+          id: 2
+          _sprite: {fileID: 0}
+          texture2D: {fileID: 0}
+          audioClip: {fileID: 0}
+          image_url: 
+          audio_url: 
+          isAnswer: 0
+        - text: 15
+          id: 3
+          _sprite: {fileID: 0}
+          texture2D: {fileID: 0}
+          audioClip: {fileID: 0}
+          image_url: 
+          audio_url: 
+          isAnswer: 1
+      additionalFields: []
+    staticQAWithSQ:
+      qaWithSubQuestion: []
 --- !u!1 &398870334
 GameObject:
   m_ObjectHideFlags: 0

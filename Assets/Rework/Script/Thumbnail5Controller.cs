@@ -124,6 +124,7 @@ public class Thumbnail5Controller : MonoBehaviour
 
         var selectedOpt = EventSystem.current.currentSelectedGameObject;
         var selOptTxt = selectedOpt.GetComponentInChildren<TextMeshProUGUI>().text;
+
         if (questionOptions[currentIndex].IsRightAnswer(selOptTxt))
         {
             //*correct answer
@@ -132,12 +133,24 @@ public class Thumbnail5Controller : MonoBehaviour
             selectedOpt.transform.GetChild(0).gameObject.SetActive(true);
             Utilities.Instance.PlayCorrect();
             Utilities.Instance.ANIM_CorrectScaleEffect(selectedOpt.transform, callback: ChangePanel);
+
+            //?scoring intetgration
+            ScoreManager.instance.RightAnswer(qIndex, questionID: question.id, answerID: GetOptionID(selOptTxt));
+
+            if (qIndex < questionOptions.Count - 1)
+                qIndex++;
+
+            GetData(qIndex);
+
         }
         else
         {
             //!wrong answer
             Utilities.Instance.PlayWrong();
             Utilities.Instance.ANIM_WrongShakeEffect(selectedOpt.transform);
+
+            //?scoring intetgration
+            ScoreManager.instance.WrongAnswer(qIndex, questionID: question.id, answerID: GetOptionID(selOptTxt));
         }
     }
 
