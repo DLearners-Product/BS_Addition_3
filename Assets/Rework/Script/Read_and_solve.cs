@@ -82,6 +82,20 @@ public class Read_and_solve : MonoBehaviour
 
 
 
+    #region QA
+
+    private int qIndex;
+    public GameObject questionGO;
+    public GameObject[] optionsGO;
+    public Dictionary<string, Component> additionalFields;
+    Component question;
+    Component[] options;
+    Component[] answers;
+
+    #endregion
+
+
+
     #region gameplay logic
     //==================================================================================================
 
@@ -90,6 +104,17 @@ public class Read_and_solve : MonoBehaviour
     {
         _currentIndex = -1;
         _draggedObjects = new List<GameObject>();
+
+
+        #region DataSetter
+        //Main_Blended.OBJ_main_blended.levelno = 3;
+        QAManager.instance.UpdateActivityQuestion();
+        qIndex = 0;
+        GetData(qIndex);
+        GetAdditionalData();
+        AssignData();
+        #endregion
+
 
         StartCoroutine(IENUM_ShowQuestion(0.5f));
     }
@@ -231,6 +256,14 @@ public class Read_and_solve : MonoBehaviour
            (_totTens.ToString() + _totOnes.ToString()) == Tot[_currentIndex])
         {
             //* Correct answer
+            //?scoring integration
+            ScoreManager.instance.RightAnswer(qIndex, questionID: question.id, answer: _totTens.ToString() + _totOnes.ToString());
+
+            if (qIndex < TA_Objects.Length - 1)
+                qIndex++;
+
+            GetData(qIndex);
+
             PS_CorrectAnswer.Play();
             Utilities.Instance.PlayCorrect();
 
@@ -257,6 +290,9 @@ public class Read_and_solve : MonoBehaviour
         else
         {
             //!Incorrect answer
+            //?scoring integration
+            ScoreManager.instance.WrongAnswer(qIndex, questionID: question.id, answer: _totTens.ToString() + _totOnes.ToString());
+
             Utilities.Instance.PlayWrong();
             yield return new WaitForSeconds(0.5f);
             G_TransparentScreen.SetActive(false);
@@ -309,6 +345,63 @@ public class Read_and_solve : MonoBehaviour
     //XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
     #endregion
 
+
+
+    #region QA
+
+    int GetOptionID(string selectedOption)
+    {
+        for (int i = 0; i < options.Length; i++)
+        {
+            if (options[i].text == selectedOption)
+            {
+                return options[i].id;
+            }
+        }
+        return -1;
+    }
+
+    bool CheckOptionIsAns(Component option)
+    {
+        for (int i = 0; i < answers.Length; i++)
+        {
+            if (option.text == answers[i].text) { return true; }
+        }
+        return false;
+    }
+
+    void GetData(int questionIndex)
+    {
+        Debug.Log(">>>>>" + questionIndex);
+        question = QAManager.instance.GetQuestionAt(0, questionIndex);
+        //if(question != null){
+        options = QAManager.instance.GetOption(0, questionIndex);
+        answers = QAManager.instance.GetAnswer(0, questionIndex);
+        // }
+    }
+
+    void GetAdditionalData()
+    {
+        additionalFields = QAManager.instance.GetAdditionalField(0);
+    }
+
+    void AssignData()
+    {
+        // Custom code
+        for (int i = 0; i < optionsGO.Length; i++)
+        {
+            optionsGO[i].GetComponent<Image>().sprite = options[i]._sprite;
+            optionsGO[i].tag = "Untagged";
+            Debug.Log(optionsGO[i].name, optionsGO[i]);
+            if (CheckOptionIsAns(options[i]))
+            {
+                optionsGO[i].tag = "answer";
+            }
+        }
+        // answerCount.text = "/"+answers.Length;
+    }
+
+    #endregion
 
 
 }

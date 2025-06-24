@@ -1785,14 +1785,59 @@ MonoBehaviour:
   - slideNo: 6
     activityName: Addition with regrouping
     hasSubquestion: 0
-    questionType: 2
+    questionType: 1
     staticQA:
       questionType: 1
       optionType: 1
       questions:
       - question:
-          text: 20 + 5
-          id: 3001
+          text: 27 + 34
+          id: 6001
+          _sprite: {fileID: 0}
+          texture2D: {fileID: 0}
+          audioClip: {fileID: 0}
+          image_url: 
+          audio_url: 
+        answers: []
+      - question:
+          text: 19 + 28
+          id: 6002
+          _sprite: {fileID: 0}
+          texture2D: {fileID: 0}
+          audioClip: {fileID: 0}
+          image_url: 
+          audio_url: 
+        answers: []
+      - question:
+          text: 57 + 35
+          id: 6003
+          _sprite: {fileID: 0}
+          texture2D: {fileID: 0}
+          audioClip: {fileID: 0}
+          image_url: 
+          audio_url: 
+        answers: []
+      - question:
+          text: 28 + 39
+          id: 6004
+          _sprite: {fileID: 0}
+          texture2D: {fileID: 0}
+          audioClip: {fileID: 0}
+          image_url: 
+          audio_url: 
+        answers: []
+      - question:
+          text: 57 + 27
+          id: 6005
+          _sprite: {fileID: 0}
+          texture2D: {fileID: 0}
+          audioClip: {fileID: 0}
+          image_url: 
+          audio_url: 
+        answers: []
+      - question:
+          text: 48 + 35
+          id: 6006
           _sprite: {fileID: 0}
           texture2D: {fileID: 0}
           audioClip: {fileID: 0}
@@ -1808,207 +1853,323 @@ MonoBehaviour:
       - question:
           text: I have 4 pencils and Jitu has 7 pencils. How many pencils do we have
             together?
-          id: 4001
+          id: 6001
           _sprite: {fileID: 0}
           texture2D: {fileID: 0}
           audioClip: {fileID: 0}
           image_url: 
           audio_url: 
-        options:
-        - text: 6
-          id: 1
-          _sprite: {fileID: 0}
-          texture2D: {fileID: 0}
-          audioClip: {fileID: 0}
-          image_url: 
-          audio_url: 
-          isAnswer: 0
-        - text: 7
-          id: 2
-          _sprite: {fileID: 0}
-          texture2D: {fileID: 0}
-          audioClip: {fileID: 0}
-          image_url: 
-          audio_url: 
-          isAnswer: 0
-        - text: 11
-          id: 3
-          _sprite: {fileID: 0}
-          texture2D: {fileID: 0}
-          audioClip: {fileID: 0}
-          image_url: 
-          audio_url: 
-          isAnswer: 1
+        options: []
+      additionalFields: []
+    staticQAWithSQ:
+      qaWithSubQuestion: []
+  - slideNo: 7
+    activityName: Colour the sum
+    hasSubquestion: 0
+    questionType: 1
+    staticQA:
+      questionType: 1
+      optionType: 1
+      questions:
       - question:
-          text: 'A squirrel has 9 nuts. He finds 8 more. What is the total number
-            of nuts? '
-          id: 4002
+          text: 10
+          id: 7001
           _sprite: {fileID: 0}
           texture2D: {fileID: 0}
           audioClip: {fileID: 0}
           image_url: 
           audio_url: 
-        options:
-        - text: 17
+        answers:
+        - text: 5 + 5
           id: 1
           _sprite: {fileID: 0}
           texture2D: {fileID: 0}
           audioClip: {fileID: 0}
           image_url: 
           audio_url: 
-          isAnswer: 1
-        - text: 15
+        - text: 2 + 8
           id: 2
           _sprite: {fileID: 0}
           texture2D: {fileID: 0}
           audioClip: {fileID: 0}
           image_url: 
           audio_url: 
-          isAnswer: 0
-        - text: 71
+        - text: 3 + 7
           id: 3
           _sprite: {fileID: 0}
           texture2D: {fileID: 0}
           audioClip: {fileID: 0}
           image_url: 
           audio_url: 
-          isAnswer: 0
+        - text: 6 + 4
+          id: 4
+          _sprite: {fileID: 0}
+          texture2D: {fileID: 0}
+          audioClip: {fileID: 0}
+          image_url: 
+          audio_url: 
       - question:
-          text: There are 7 bees in the hive. 6 more fly in. How many bees are there
-            in all?
-          id: 4003
+          text: 5
+          id: 7002
           _sprite: {fileID: 0}
           texture2D: {fileID: 0}
           audioClip: {fileID: 0}
           image_url: 
           audio_url: 
-        options:
-        - text: 10
-          id: 1
+        answers:
+        - text: 2 + 3
+          id: 5
           _sprite: {fileID: 0}
           texture2D: {fileID: 0}
           audioClip: {fileID: 0}
           image_url: 
           audio_url: 
-          isAnswer: 0
-        - text: 13
-          id: 2
+        - text: 1 + 4
+          id: 6
           _sprite: {fileID: 0}
           texture2D: {fileID: 0}
           audioClip: {fileID: 0}
           image_url: 
           audio_url: 
-          isAnswer: 1
-        - text: 7
-          id: 3
+        - text: 4 + 1
+          id: 7
           _sprite: {fileID: 0}
           texture2D: {fileID: 0}
           audioClip: {fileID: 0}
           image_url: 
           audio_url: 
-          isAnswer: 0
+        - text: 5 + 0
+          id: 8
+          _sprite: {fileID: 0}
+          texture2D: {fileID: 0}
+          audioClip: {fileID: 0}
+          image_url: 
+          audio_url: 
       - question:
-          text: 'Shan has 4 pets and Khan has 8 pets. How many pets do they have
-            altogether? '
-          id: 4004
+          text: 20
+          id: 7003
           _sprite: {fileID: 0}
           texture2D: {fileID: 0}
           audioClip: {fileID: 0}
           image_url: 
           audio_url: 
-        options:
-        - text: 12
-          id: 1
+        answers:
+        - text: 12 + 8
+          id: 9
           _sprite: {fileID: 0}
           texture2D: {fileID: 0}
           audioClip: {fileID: 0}
           image_url: 
           audio_url: 
-          isAnswer: 1
-        - text: 10
-          id: 2
+        - text: 11 + 9
+          id: 10
           _sprite: {fileID: 0}
           texture2D: {fileID: 0}
           audioClip: {fileID: 0}
           image_url: 
           audio_url: 
-          isAnswer: 0
-        - text: 9
-          id: 3
+        - text: 1 + 19
+          id: 11
           _sprite: {fileID: 0}
           texture2D: {fileID: 0}
           audioClip: {fileID: 0}
           image_url: 
           audio_url: 
-          isAnswer: 0
+        - text: 13 + 7
+          id: 12
+          _sprite: {fileID: 0}
+          texture2D: {fileID: 0}
+          audioClip: {fileID: 0}
+          image_url: 
+          audio_url: 
+      options:
+      - text: 5 + 5
+        id: 1
+        _sprite: {fileID: 0}
+        texture2D: {fileID: 0}
+        audioClip: {fileID: 0}
+        image_url: 
+        audio_url: 
+      - text: 2 + 8
+        id: 2
+        _sprite: {fileID: 0}
+        texture2D: {fileID: 0}
+        audioClip: {fileID: 0}
+        image_url: 
+        audio_url: 
+      - text: 3 + 7
+        id: 3
+        _sprite: {fileID: 0}
+        texture2D: {fileID: 0}
+        audioClip: {fileID: 0}
+        image_url: 
+        audio_url: 
+      - text: 6 + 4
+        id: 4
+        _sprite: {fileID: 0}
+        texture2D: {fileID: 0}
+        audioClip: {fileID: 0}
+        image_url: 
+        audio_url: 
+      - text: 2 + 3
+        id: 5
+        _sprite: {fileID: 0}
+        texture2D: {fileID: 0}
+        audioClip: {fileID: 0}
+        image_url: 
+        audio_url: 
+      - text: 1 + 4
+        id: 6
+        _sprite: {fileID: 0}
+        texture2D: {fileID: 0}
+        audioClip: {fileID: 0}
+        image_url: 
+        audio_url: 
+      - text: 4 + 1
+        id: 7
+        _sprite: {fileID: 0}
+        texture2D: {fileID: 0}
+        audioClip: {fileID: 0}
+        image_url: 
+        audio_url: 
+      - text: 5 + 0
+        id: 8
+        _sprite: {fileID: 0}
+        texture2D: {fileID: 0}
+        audioClip: {fileID: 0}
+        image_url: 
+        audio_url: 
+      - text: 12 + 8
+        id: 9
+        _sprite: {fileID: 0}
+        texture2D: {fileID: 0}
+        audioClip: {fileID: 0}
+        image_url: 
+        audio_url: 
+      - text: 11 + 9
+        id: 10
+        _sprite: {fileID: 0}
+        texture2D: {fileID: 0}
+        audioClip: {fileID: 0}
+        image_url: 
+        audio_url: 
+      - text: 1 + 19
+        id: 11
+        _sprite: {fileID: 0}
+        texture2D: {fileID: 0}
+        audioClip: {fileID: 0}
+        image_url: 
+        audio_url: 
+      - text: 13 + 7
+        id: 12
+        _sprite: {fileID: 0}
+        texture2D: {fileID: 0}
+        audioClip: {fileID: 0}
+        image_url: 
+        audio_url: 
+      additionalFields: []
+    dynamicQA:
+      questionType: 1
+      optionType: 1
+      questions:
       - question:
-          text: Kumar had 8 frogs on his right side and 6 frogs on his left side.
-            What is the total number of frogs?
-          id: 4005
+          text: I have 4 pencils and Jitu has 7 pencils. How many pencils do we have
+            together?
+          id: 6001
           _sprite: {fileID: 0}
           texture2D: {fileID: 0}
           audioClip: {fileID: 0}
           image_url: 
           audio_url: 
-        options:
-        - text: 7
-          id: 1
-          _sprite: {fileID: 0}
-          texture2D: {fileID: 0}
-          audioClip: {fileID: 0}
-          image_url: 
-          audio_url: 
-          isAnswer: 0
-        - text: 14
-          id: 2
-          _sprite: {fileID: 0}
-          texture2D: {fileID: 0}
-          audioClip: {fileID: 0}
-          image_url: 
-          audio_url: 
-          isAnswer: 1
-        - text: 7
-          id: 3
-          _sprite: {fileID: 0}
-          texture2D: {fileID: 0}
-          audioClip: {fileID: 0}
-          image_url: 
-          audio_url: 
-          isAnswer: 0
+        options: []
+      additionalFields: []
+    staticQAWithSQ:
+      qaWithSubQuestion: []
+  - slideNo: 8
+    activityName: Read and solve
+    hasSubquestion: 0
+    questionType: 1
+    staticQA:
+      questionType: 1
+      optionType: 1
+      questions:
       - question:
-          text: Das has 9 buns and Bala has 6 buns. How many buns do they have in
-            all?
-          id: 4006
+          text: Lal gets 40 chocolates and 32 cupcakes to celebrate his birthday.
+            Find the total?
+          id: 8001
           _sprite: {fileID: 0}
           texture2D: {fileID: 0}
           audioClip: {fileID: 0}
           image_url: 
           audio_url: 
-        options:
-        - text: 10
-          id: 1
+        answers: []
+      - question:
+          text: There are 62 rose plants in a rose garden. The gardener planted 29
+            more rose plants today. How many rose plants are there in the garden
+            totally?
+          id: 8002
           _sprite: {fileID: 0}
           texture2D: {fileID: 0}
           audioClip: {fileID: 0}
           image_url: 
           audio_url: 
-          isAnswer: 0
-        - text: 8
-          id: 2
+        answers: []
+      - question:
+          text: A book has 28 pages in 'Part 1' and 31 pages in 'Part 2'. How many
+            pages does this book have altogether?
+          id: 8003
           _sprite: {fileID: 0}
           texture2D: {fileID: 0}
           audioClip: {fileID: 0}
           image_url: 
           audio_url: 
-          isAnswer: 0
-        - text: 15
-          id: 3
+        answers: []
+      - question:
+          text: There are 23 fishes kept in the red basket and 31 fishes in the blue
+            basket. Altogether, how many fishes are there in both baskets?
+          id: 8004
           _sprite: {fileID: 0}
           texture2D: {fileID: 0}
           audioClip: {fileID: 0}
           image_url: 
           audio_url: 
-          isAnswer: 1
+        answers: []
+      - question:
+          text: Harsha has 53 stamps and Rohan has 46 stamps. Find the total number
+            of stamps.
+          id: 8005
+          _sprite: {fileID: 0}
+          texture2D: {fileID: 0}
+          audioClip: {fileID: 0}
+          image_url: 
+          audio_url: 
+        answers: []
+      - question:
+          text: A farmer has 48 goats and 22 cows. How many farm animals does he
+            have in all?
+          id: 8006
+          _sprite: {fileID: 0}
+          texture2D: {fileID: 0}
+          audioClip: {fileID: 0}
+          image_url: 
+          audio_url: 
+        answers: []
+      options: []
+      additionalFields: []
+    dynamicQA:
+      questionType: 1
+      optionType: 1
+      questions:
+      - question:
+          text: I have 4 pencils and Jitu has 7 pencils. How many pencils do we have
+            together?
+          id: 6001
+          _sprite: {fileID: 0}
+          texture2D: {fileID: 0}
+          audioClip: {fileID: 0}
+          image_url: 
+          audio_url: 
+        options: []
       additionalFields: []
     staticQAWithSQ:
       qaWithSubQuestion: []
@@ -2533,7 +2694,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &508780578
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9867,6 +10028,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 218460562}
     m_Modifications:
+    - target: {fileID: 7943296185543334159, guid: 9057be8df35de1747b15cdc9923cafaa,
+        type: 3}
+      propertyPath: m_text
+      value: There are 62 rose plants in a rose garden. The gardener planted 29 more
+        rose plants today. How many rose plants are there in the garden totally?
+      objectReference: {fileID: 0}
+    - target: {fileID: 7943296186363327703, guid: 9057be8df35de1747b15cdc9923cafaa,
+        type: 3}
+      propertyPath: m_text
+      value: Lal gets 40 chocolates and 32 cupcakes to celebrate his birthday. Find
+        the total?
+      objectReference: {fileID: 0}
     - target: {fileID: 7943296186852579982, guid: 9057be8df35de1747b15cdc9923cafaa,
         type: 3}
       propertyPath: m_LocalPosition.x

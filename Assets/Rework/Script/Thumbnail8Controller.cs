@@ -24,7 +24,7 @@ public class Thumbnail8Controller : MonoBehaviour
     string _currentSelectedColorSTR;
     GameObject _currentColorObj;
     int totalyAnsweredCount = 0;
-
+    private int _qCount = 0;
 
 
     #region QA
@@ -83,15 +83,27 @@ public class Thumbnail8Controller : MonoBehaviour
             case "Red":
                 SetCurrentSelectedColor("10", Color.white, selectedColorCode);
                 SetCursorSprite(customCursor[1]);
+
+                //?scoring integration
+                GetData(0);
                 break;
+
             case "Yellow":
                 SetCurrentSelectedColor("5", Color.black, selectedColorCode);
                 SetCursorSprite(customCursor[2]);
+
+                //?scoring integration
+                GetData(1);
                 break;
+
             case "Green":
                 SetCurrentSelectedColor("20", Color.white, selectedColorCode);
                 SetCursorSprite(customCursor[3]);
+
+                //?scoring integration
+                GetData(2);
                 break;
+
             case "NoColor":
                 SetCurrentSelectedColor("", Color.white, selectedColorCode);
                 SetCursorSprite(customCursor[0]);
@@ -110,6 +122,11 @@ public class Thumbnail8Controller : MonoBehaviour
             {
                 if (matchObj.answer == _currentSelectedColorSTR)
                 {
+                    Utilities.Instance.PlayCorrect();
+                    //?scoring integration
+                    ScoreManager.instance.WrongAnswer(_qCount, questionID: question.id, answerID: GetOptionID(selectedQues));
+                    _qCount++;
+
                     totalyAnsweredCount++;
                     UpdateCounter();
                     switch (_currentSelectedColorSTR)
@@ -128,6 +145,10 @@ public class Thumbnail8Controller : MonoBehaviour
                 }
                 else
                 {
+                    Utilities.Instance.PlayWrong();
+                    //?scoring integration
+                    ScoreManager.instance.WrongAnswer(_qCount, questionID: question.id, answerID: GetOptionID(selectedQues));
+
                     Debug.Log("Wrogn answer");
                 }
                 break;

@@ -72,6 +72,9 @@ public class Addition_with_regrouping : MonoBehaviour
     private List<TMP_InputField> _inputFieldList;
     private List<GameObject> _dragList;
 
+    private string _result = "",
+                    _carry = "";
+
     //!end of region - local variables
     //XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
     #endregion
@@ -234,6 +237,23 @@ public class Addition_with_regrouping : MonoBehaviour
         _isAnsDone = true;
         Utilities.Instance.PlayVoice(ACA_Answers[_currentIndex]);
 
+
+        //extracting ans
+        _result = _inputFieldList[0].text + _inputFieldList[1].text;
+        _carry = _inputFieldList[2].text;
+
+        string ans = "Result : " + _result + " | Carry : " + _carry;
+
+
+        //?scoring integration
+        ScoreManager.instance.RightAnswer(qIndex, questionID: question.id, answer: ans);
+
+        if (qIndex < ACA_Questions.Length - 1)
+            qIndex++;
+
+        GetData(qIndex);
+
+
         if (_isAnsDone && _isBlockDone)
         {
             if (_currentIndex == TA_Objects.Length - 1)
@@ -249,6 +269,18 @@ public class Addition_with_regrouping : MonoBehaviour
     public void WrongAnswer()
     {
         Utilities.Instance.PlayWrong();
+
+
+        //extracting ans
+        _result = _inputFieldList[0].text + _inputFieldList[1].text;
+        _carry = _inputFieldList[2].text;
+
+        string ans = "Result : " + _result + " | Carry : " + _carry;
+
+
+        //?scoring integration
+        ScoreManager.instance.WrongAnswer(qIndex, questionID: question.id, answer: ans);
+
     }
 
 
