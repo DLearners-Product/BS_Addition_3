@@ -126509,8 +126509,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'There are 62 rose plants in a rose garden. The gardener planted 29 more
-    rose plants today. How many rose plants are there in the garden totally? '
+  m_text: There are 62 rose plants in a rose garden. The gardener planted 29 more
+    rose plants today. How many rose plants are there in the garden totally?
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 373e0bfaf40d79641a5182e4513d67de, type: 2}
   m_sharedMaterial: {fileID: 8610426517522080127, guid: 373e0bfaf40d79641a5182e4513d67de,
@@ -140030,8 +140030,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Lal gets 40 chocolates and 32 cupcakes to celebrate his birthday. Find
-    the total? '
+  m_text: Lal gets 40 chocolates and 32 cupcakes to celebrate his birthday. Find
+    the total?
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 373e0bfaf40d79641a5182e4513d67de, type: 2}
   m_sharedMaterial: {fileID: 8610426517522080127, guid: 373e0bfaf40d79641a5182e4513d67de,
@@ -145128,6 +145128,8 @@ MonoBehaviour:
   - {fileID: 7943296186581509077}
   - {fileID: 7943296185600836580}
   PS_CorrectAnswer: {fileID: 7943296186107983516}
+  questionGO: {fileID: 0}
+  optionsGO: []
 --- !u!1 &7943296186864463213
 GameObject:
   m_ObjectHideFlags: 0

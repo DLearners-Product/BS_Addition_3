@@ -324,6 +324,7 @@ public class Read_and_solve : MonoBehaviour
 
     public void ShowActivityCompleted()
     {
+        BlendedOperations.instance.NotifyActivityCompleted();
         G_ActivityCompleted.SetActive(true);
     }
 

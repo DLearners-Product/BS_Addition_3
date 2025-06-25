@@ -233,20 +233,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 218460562}
     m_Modifications:
-    - target: {fileID: 5974346225187424582, guid: 62be2f085677b1849bd2e6f8d158252b,
-        type: 3}
-      propertyPath: m_Name
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 5974346225189548712, guid: 62be2f085677b1849bd2e6f8d158252b,
-        type: 3}
-      propertyPath: m_Name
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5974346225206104482, guid: 62be2f085677b1849bd2e6f8d158252b,
         type: 3}
       propertyPath: m_Name
-      value: 3_Hidden_image*
+      value: 3_Hidden_image*E
       objectReference: {fileID: 0}
     - target: {fileID: 5974346225206104483, guid: 62be2f085677b1849bd2e6f8d158252b,
         type: 3}
@@ -352,56 +342,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5974346225301737482, guid: 62be2f085677b1849bd2e6f8d158252b,
-        type: 3}
-      propertyPath: m_Name
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 5974346225559461648, guid: 62be2f085677b1849bd2e6f8d158252b,
-        type: 3}
-      propertyPath: m_Name
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 5974346225632653677, guid: 62be2f085677b1849bd2e6f8d158252b,
-        type: 3}
-      propertyPath: m_Name
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 5974346226119778121, guid: 62be2f085677b1849bd2e6f8d158252b,
-        type: 3}
-      propertyPath: m_Name
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 5974346226257918484, guid: 62be2f085677b1849bd2e6f8d158252b,
-        type: 3}
-      propertyPath: m_Name
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 5974346226765575759, guid: 62be2f085677b1849bd2e6f8d158252b,
-        type: 3}
-      propertyPath: m_Name
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5974346226786197721, guid: 62be2f085677b1849bd2e6f8d158252b,
-        type: 3}
-      propertyPath: m_Name
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 5974346226861600637, guid: 62be2f085677b1849bd2e6f8d158252b,
-        type: 3}
-      propertyPath: m_Name
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5974346226962552803, guid: 62be2f085677b1849bd2e6f8d158252b,
-        type: 3}
-      propertyPath: m_Name
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5974346227054713115, guid: 62be2f085677b1849bd2e6f8d158252b,
-        type: 3}
-      propertyPath: m_Name
-      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 62be2f085677b1849bd2e6f8d158252b, type: 3}
@@ -659,7 +599,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: 241
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &208785855
@@ -1553,7 +1493,7 @@ MonoBehaviour:
     staticQAWithSQ:
       qaWithSubQuestion: []
   - slideNo: 4
-    activityName: Hidden image
+    activityName: Count and match
     hasSubquestion: 0
     questionType: 2
     staticQA:
@@ -4010,7 +3950,7 @@ MonoBehaviour:
     slideName: 
     teacherInstruction: 
     activityInstruction: 
-    activityType: 0
+    activityType: 3
     HAS_VIDEO: 0
     HAS_WORKSHEET: 0
     HAS_SYLLABLE: 0
@@ -4049,7 +3989,7 @@ MonoBehaviour:
     slideName: 
     teacherInstruction: 
     activityInstruction: 
-    activityType: 0
+    activityType: 3
     HAS_VIDEO: 0
     HAS_WORKSHEET: 0
     HAS_SYLLABLE: 0
@@ -4075,12 +4015,12 @@ MonoBehaviour:
     slideName: 
     teacherInstruction: 
     activityInstruction: 
-    activityType: 0
+    activityType: 3
     HAS_VIDEO: 0
     HAS_WORKSHEET: 0
     HAS_SYLLABLE: 0
     HAS_GRAMMER: 0
-    HAS_ACTIVITY: 0
+    HAS_ACTIVITY: 1
     IS_MANUAL_ACTIVITY: 0
   - name: 9good_bye_song
     slideObject: {fileID: 1331438503}
@@ -9613,10 +9553,15 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -539
       objectReference: {fileID: 0}
+    - target: {fileID: 4778929372574262908, guid: c9286a78a1636c24e818dbad16935288,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -12.800293
+      objectReference: {fileID: 0}
     - target: {fileID: 4778929372714649506, guid: c9286a78a1636c24e818dbad16935288,
         type: 3}
       propertyPath: m_Name
-      value: 6_Addition_with_regrouping*
+      value: 6_Addition_with_regrouping*E
       objectReference: {fileID: 0}
     - target: {fileID: 4778929372714649509, guid: c9286a78a1636c24e818dbad16935288,
         type: 3}
@@ -10028,18 +9973,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 218460562}
     m_Modifications:
-    - target: {fileID: 7943296185543334159, guid: 9057be8df35de1747b15cdc9923cafaa,
-        type: 3}
-      propertyPath: m_text
-      value: There are 62 rose plants in a rose garden. The gardener planted 29 more
-        rose plants today. How many rose plants are there in the garden totally?
-      objectReference: {fileID: 0}
-    - target: {fileID: 7943296186363327703, guid: 9057be8df35de1747b15cdc9923cafaa,
-        type: 3}
-      propertyPath: m_text
-      value: Lal gets 40 chocolates and 32 cupcakes to celebrate his birthday. Find
-        the total?
-      objectReference: {fileID: 0}
     - target: {fileID: 7943296186852579982, guid: 9057be8df35de1747b15cdc9923cafaa,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -10148,7 +10081,7 @@ PrefabInstance:
     - target: {fileID: 7943296186852579983, guid: 9057be8df35de1747b15cdc9923cafaa,
         type: 3}
       propertyPath: m_Name
-      value: 8_Read_and_solve
+      value: 8_Read_and_solve*E
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9057be8df35de1747b15cdc9923cafaa, type: 3}

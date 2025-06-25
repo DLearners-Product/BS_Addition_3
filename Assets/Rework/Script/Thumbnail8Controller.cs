@@ -124,7 +124,7 @@ public class Thumbnail8Controller : MonoBehaviour
                 {
                     Utilities.Instance.PlayCorrect();
                     //?scoring integration
-                    ScoreManager.instance.WrongAnswer(_qCount, questionID: question.id, answerID: GetOptionID(selectedQues));
+                    ScoreManager.instance.RightAnswer(_qCount, questionID: question.id, answerID: GetOptionID(selectedQues));
                     _qCount++;
 
                     totalyAnsweredCount++;
@@ -162,7 +162,11 @@ public class Thumbnail8Controller : MonoBehaviour
     void SetCursorSprite(Texture2D cursorSprite) => Cursor.SetCursor(cursorSprite, Vector2.one, CursorMode.Auto);
 
 
-    void EnableActivityCompleted() => activityCompleted.SetActive(true);
+    void EnableActivityCompleted()
+    {
+        BlendedOperations.instance.NotifyActivityCompleted();
+        activityCompleted.SetActive(true);
+    }
 
 
     void UpdateCounter() => counterObj.GetComponentInChildren<TextMeshProUGUI>().text = $"{totalyAnsweredCount}/{matchingObjs.Length}";

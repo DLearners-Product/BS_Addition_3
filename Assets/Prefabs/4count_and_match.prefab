@@ -120034,6 +120034,8 @@ MonoBehaviour:
   blockPanel: {fileID: 8739217937113518740}
   activityCompleted: {fileID: 7501275143705437980}
   PS_CorrectAnswer: {fileID: 3220292535790342840}
+  questionGO: {fileID: 0}
+  optionsGO: []
 --- !u!1 &8739217937017680221
 GameObject:
   m_ObjectHideFlags: 0

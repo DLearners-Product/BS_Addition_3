@@ -135,9 +135,16 @@ public class Thumbnail4Controller : MonoBehaviour
         var dragObjTxt = dragObj.GetComponentInChildren<TextMeshProUGUI>().text;
         bool answerMatch = (int.Parse(dropSlotTxt[0].Trim()) + int.Parse(dropSlotTxt[1].Trim())) == int.Parse(dragObjTxt.Trim());
 
+
+        Debug.Log("drop slot txt : " + dropSlotTxt);
+        Debug.Log("drag obj txt : " + dragObjTxt);
+        Debug.Log("dropObj " + dropObj.name);
+        Debug.Log("dragObj " + dragObj.name);
+
+
         //?scoring integration
         for (int i = 0; i < _newQindexList.Count; i++)
-            if (dropObj.transform.GetComponentInChildren<TextMeshProUGUI>().text.Equals(questionPuzzleObjs[i].GetComponentInChildren<TextMeshProUGUI>().text))
+            if (dropObj.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text.Equals(questionPuzzleObjs[i].transform.GetChild(0).GetComponent<TextMeshProUGUI>().text))
             {
                 GetData(_newQindexList[i]);
                 break;
@@ -154,9 +161,14 @@ public class Thumbnail4Controller : MonoBehaviour
             Utilities.Instance.PlayCorrect();
             totalyAnswered++;
             UpdateCounter();
-            Destroy(dropObj.GetComponentInChildren<TextMeshProUGUI>());
+
+            // Destroy(dropObj.GetComponentInChildren<TextMeshProUGUI>());
+            dropObj.GetComponentInChildren<TextMeshProUGUI>().gameObject.SetActive(false);
+
             dropObj.GetComponent<Image>().sprite = dragObj.GetComponent<Image>().sprite;
-            Destroy(dragObj);
+
+            // Destroy(dragObj);
+            dragObj.SetActive(false);
 
             if (totalyAnswered == questionTexts.Length)
             {
@@ -213,6 +225,7 @@ public class Thumbnail4Controller : MonoBehaviour
 
     void EnableActivityCompleted()
     {
+        BlendedOperations.instance.NotifyActivityCompleted();
         activityCompleted.SetActive(true);
     }
 

@@ -72,7 +72,12 @@ public class Thumbnail5Controller : MonoBehaviour
     void EnableBLockPanel() => blockPanel.SetActive(true);
     void DisableBlockPanel() => blockPanel.SetActive(false);
     void DisableActivityCompleted() => activityCompleted.SetActive(false);
-    void EnableActivityCompleted() => activityCompleted.SetActive(true);
+    
+    void EnableActivityCompleted()
+    {
+        BlendedOperations.instance.NotifyActivityCompleted();
+        activityCompleted.SetActive(true);
+    }
 
 
     void UpdateCounter() => counterPanel.GetComponentInChildren<TextMeshProUGUI>().text = $"{currentIndex + 1}/{questionOptions.Count}";
@@ -80,7 +85,11 @@ public class Thumbnail5Controller : MonoBehaviour
 
     void SwitchNextQuestion()
     {
-        if (currentIndex == questionOptions.Count) { EnableActivityCompleted(); return; }
+        if (currentIndex == questionOptions.Count)
+        {
+            EnableActivityCompleted();
+            return;
+        }
 
         questionText.text = questionOptions[currentIndex].question;
 

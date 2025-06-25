@@ -380,6 +380,7 @@ public class Addition_with_regrouping : MonoBehaviour
 
     private void ShowActivityCompleted()
     {
+        BlendedOperations.instance.NotifyActivityCompleted();
         G_ActivityCompleted.SetActive(true);
     }
 

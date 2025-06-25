@@ -138063,7 +138063,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -12.800293, y: 0}
+  m_AnchoredPosition: {x: -12.800232, y: 0}
   m_SizeDelta: {x: 182.80493, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4778929372574262910
@@ -140082,6 +140082,8 @@ MonoBehaviour:
   - {fileID: 4778929373086772903}
   PS_CorrectAnswer: {fileID: 4778929372408961491}
   PS_CorrectAnswerBlock: {fileID: 4778929372074474471}
+  questionGO: {fileID: 0}
+  optionsGO: []
 --- !u!1 &4778929372720087486
 GameObject:
   m_ObjectHideFlags: 0
